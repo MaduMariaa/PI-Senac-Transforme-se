@@ -1,14 +1,15 @@
 .navbar{
     background-color: rgb(245, 245, 245); 
     display: flex;
-
     padding: 12px 24px;
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     align-items: center;
     height: 80px;
-    padding-top: 20px;
-    margin-bottom: 20px;
+    box-sizing: border-box;
+    z-index: 1000;
 }
 
 .navbar nav{
@@ -16,7 +17,9 @@
     justify-content: center;
     gap: 20px;
     flex: 1;
+    margin-right: 80px;
 }
+
 .navitem{
     color: rgb(196, 118, 131);
     padding: 12px 24px;
@@ -26,15 +29,38 @@
     border: none;
     cursor: pointer;
     text-transform: uppercase;
-    
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .navitem:hover {
     background-color: #ffffff;
-    color: #000;
+    color: rgb(161, 11, 88);
 }
 
-img {
+.logo {
+    margin-left: 40px;
+    cursor: pointer;
     width: 80px;
     /* deixar a imagem na esquerda */
+}
+
+/* --- RESPONSIVIDADE PARA CELULAR (Telas até 768px) --- */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center;
+        padding: 10px;
+        height: 80px; 
+        background-color: #ffffff;
+    }
+
+    /*oculta o menu*/
+    .navbar nav {
+        display: none !important;
+    }
+
+    .navbar .logo {
+        height: 80px;
+        width: auto;
+        margin: 0;
+    }
 }

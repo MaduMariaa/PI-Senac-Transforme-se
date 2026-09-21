@@ -4,66 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio Pet</title>
-    <link rel="shortcut icon" href="imagens/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="imagens/Design_sem_nome__1_-removebg-preview.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/banner.css">
     <link rel="stylesheet" href="css/carrossel.css">
     <link rel="stylesheet" href="css/catalogo.css">
-</head>
-<body>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+<body id="inicio">
     <header class="navbar">
-        <img src="imagens/logo.png" alt="">
+        <a href="#inicio">
+        <img class="logo" src="imagens/logo.png">
+        </a>
         <nav>
-            <a href="#home" class="navitem">HOME</a>
+            <a href="#inicio" class="navitem">HOME</a>
             <a href="#banho" class="navitem">BANHO E TOSA</a>
             <a href="#produtos" class="navitem">PRODUTOS</a>
-            <a href="contato" class="navitem">CONTATO</a>
+            <a href="#contato" class="navitem">CONTATO</a>
         </nav>
     </header>
-    <section class="banner" id="home">
-            <!-- <div class="fotoespaco">
-                </div>   -->
-            <div class="sobre">
-                <h1>Studio Pet</h1>
-                <p>O Studio Pet é um espaço dedicado ao cuidado e bem-estar dos animais de estimação. Oferecemos serviços de banho e tosa, além de uma variedade de produtos para atender às necessidades dos nossos clientes peludos. Nossa equipe é apaixonada por animais e está comprometida em proporcionar uma experiência agradável e segura para todos os pets que passam por aqui.</p>
-            </div>
-    </section>
-        <section class="carrossel">
-            <div class="carrossel-track">
-                <img src="../Codigos/imagens/gorgeous-sunset-over-the-sea-free-image.webp" alt="">
-                <img src="../Codigos/imagens/gorgeous-sunset-over-the-sea-free-image.webp" alt="">
-                <img src="../Codigos/imagens/gorgeous-sunset-over-the-sea-free-image.webp" alt="">
-                <img src="../Codigos/imagens/gorgeous-sunset-over-the-sea-free-image.webp" alt="">
-                <!--Duplicar para ter o loop suave -->
-                 <img src="../Codigos/imagens/gorgeous-sunset-over-the-sea-free-image.webp" alt="">
-                 <img src="../Codigos/imagens/gorgeous-sunset-over-the-sea-free-image.webp" alt="">
-                 <img src="../Codigos/imagens/gorgeous-sunset-over-the-sea-free-image.webp" alt="">
-                 <img src="../Codigos/imagens/gorgeous-sunset-over-the-sea-free-image.webp" alt="">
+    <main>
+        <section class="banner-principal">
+            <div class="banner-overlay"></div> 
+        
+            <div class="banner-conteudo">
+                <span class="banner-subtitulo">Bem-vindo ao seu</span>
+                    <h1 class="banner-titulo">Studio Pet</h1>
+                    <p class="banner-texto">O cuidado, o carinho e o estilo que o seu melhor amigo merece.</p>
+                    <a href="#banho" class="banner-botao">Conhecer Serviços</a>
             </div>
         </section>
-    
-    <container class="catalogo">
-        <main>
-            <div class="cartoes"> 
-                <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/gorgeous-sunset-over-the-sea-free-image.jpeg?w=1024&quality=50">
+    </main>
+        <section id="banho" class="carrossel">
+             <div class="carrossel-header">
+                <span class="carrossel-tagline"> Banho & Tosa</span>
             </div>
-            <div class="cartoes">
-                <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/gorgeous-sunset-over-the-sea-free-image.jpeg?w=1024&quality=50">
+            <div class="carrossel-wrapper">
+                <div class="carrossel-track">
+                
+                <!-- Foto 1 -->
+                <div class="carrossel-item">
+                    <span class="pet-service-badge">Banho</span>
+                    <img src="imagens/banho.png" alt="Pet no Studio Pet" loading="lazy">
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="carrossel-item">
+                    <span class="pet-service-badge">Banho Relaxante</span>
+                    <img src="imagens/banho.png" alt="Pet no Studio Pet" loading="lazy">
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="carrossel-item">
+                    <span class="pet-service-badge">Hidratação</span>
+                    <img src="imagens/banho.png" alt="Pet no Studio Pet" loading="lazy">
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="carrossel-item">
+                    <span class="pet-service-badge">Tosa</span>
+                    <img src="imagens/banho.png" alt="Pet no Studio Pet" loading="lazy">
+                </div>
+
+                <!-- Foto 5 -->
+                <div class="carrossel-item">
+                    <span class="pet-service-badge">Fotos</span>
+                    <img src="imagens/banho.png" alt="Pet no Studio Pet" loading="lazy">
+                </div>
+
+                <!-- Foto 6 -->
+                <div class="carrossel-item">
+                    <span class="pet-service-badge">Táxi Dog</span>
+                    <img src="imagens/banho.png" alt="Pet no Studio Pet" loading="lazy">
+                </div>
+
+                <!-- REPETIÇÃO DO LOOP-->
+                <div class="carrossel-item"><span class="pet-service-badge">Banho + Tosa</span><img src="imagens/banho.png" loading="lazy"></div>
+                <div class="carrossel-item"><span class="pet-service-badge">Tosa Bebê</span><img src="imagens/banho.png" loading="lazy"></div>
+                <div class="carrossel-item"><span class="pet-service-badge">Hidratação</span><img src="imagens/banho.png" loading="lazy"></div>
+                <div class="carrossel-item"><span class="pet-service-badge">Banho Relaxante</span><img src="imagens/banho.png" loading="lazy"></div>
+            
+                <div class="carrossel-item"><span class="pet-service-badge">Banho + Tosa</span><img src="imagens/banho.png" loading="lazy"></div>
+                <div class="carrossel-item"><span class="pet-service-badge">Tosa Bebê</span><img src="imagens/banho.png" loading="lazy"></div>
+                <div class="carrossel-item"><span class="pet-service-badge">Hidratação</span><img src="imagens/banho.png" loading="lazy"></div>
+                <div class="carrossel-item"><span class="pet-service-badge">Banho Relaxante</span><img src="imagens/banho.png" loading="lazy"></div>
+
+                </div>
             </div>
-            <div class="cartoes"> 
-                <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/gorgeous-sunset-over-the-sea-free-image.jpeg?w=1024&quality=50">
-            </div>
-            <div class="cartoes">
-                <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/gorgeous-sunset-over-the-sea-free-image.jpeg?w=1024&quality=50">
-            </div>
-            <div class="cartoes"> 
-                <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/gorgeous-sunset-over-the-sea-free-image.jpeg?w=1024&quality=50">
-            </div>
-            <div class="cartoes">
-                <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/gorgeous-sunset-over-the-sea-free-image.jpeg?w=1024&quality=50">
-            </div>
-        </main> 
-    </section>
+        </section>
+        <!-- Seção PRODUTOS -->
+        <section id="produtos" class="secao-produtos">
+            <h2>Nossos Produtos</h2>
+            <!-- Conteúdo do catálogo aqui -->
+        </section>
+
+        <!-- Seção CONTATO -->
+        <footer id="contato" class="secao-contato">
+            <h2>Contato</h2>
+            <!-- Informações de contato e rodapé aqui -->
+        </footer>
 </body>
 </html>

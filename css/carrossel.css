@@ -1,27 +1,112 @@
 .carrossel {
     width: 100%;
     overflow: hidden;
-    background-color: #f5f5f5;
+    background-color: rgb(255, 255, 255);
     padding: 20px 0;
+    background-color: rgb(241, 231, 236);
+    height: 500px;
 }
-
 
 .carrossel-track {
     display: flex;
     width: max-content; /*deixa a fileira crescer com o n° de img */
-    animation: rodar 15s linear infinite; 
+    animation: rodar 22s linear infinite; 
     will-change: transform;
     backface-visibility: hidden;
     transform: translateZ(0);
+    margin-top: 20px;
 }
 
 .carrossel-track img {
-    width: 250px;
-    height: 180px;
+    width: 300px;
+    height: 290px;
     object-fit: cover;
     margin: 0 10px;
     border-radius: 8px;
     flex-shrink: 0; /* não deixa a imagem encolher */
+}
+
+
+/*Efeito lateral*/
+.carrossel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carrossel-wrapper::before,
+.carrossel-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 120px; /* Largura do efeito esfumaçado */
+    height: 100%;
+    z-index: 5;
+    pointer-events: none; /* Não bloqueia o mouse */
+}
+
+.carrossel-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #f4e3f0 0%, rgba(252, 252, 252, 0) 100%);
+}
+
+.carrossel-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #f4e3f0 0%, rgba(252, 252, 252, 0) 100%);
+}
+
+/*foto e da etiqueta */
+.carrossel-item {
+    position: relative;
+    overflow: visible;
+}
+
+/*Etiqueta invisível por padrão*/
+.pet-service-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /*a etiqueda vem de baixo*/
+    background-color: rgba(255, 255, 255, 0.95);
+    color: rgb(196, 118, 131);
+    padding: 6px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 30px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    opacity: 0; /*esconde a etiqueta*/
+    transition: all 0.3s ease;
+}
+
+/*hover*/
+.carrossel-item:hover .pet-service-badge {
+    opacity: 1; /* Revela a etiqueta */
+    transform: translateX(-50%) translateY(0); /*Animação pra subir a etiqueta*/
+}
+
+.carrossel-item:hover img {
+    transform: translateY(-5px); /* Dá zoom e flutua a foto */
+    filter: brightness(1.05); /* Acende o brilho da imagem */
+    border-color: rgb(196, 118, 131); /* Borda fica rosa */
+}
+
+.carrossel-header{
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.carrossel-tagline{
+    font-size: 16px;
+    font-weight: bold;
+    font-size: large;
+    text-transform: uppercase;
+    padding: 15px 50px;
+    background-color: #ffff;
+    color: rgb(211, 146, 157);
+    border-radius: 50px
 }
 
 @keyframes rodar {
@@ -30,5 +115,18 @@
     }
     to {
         transform: translateX(-50%); /*Anda até a metade por conta das duplicadas */
+    }
+}
+
+/* --- CONFIGURAÇÃO PARA CELULAR (Telas até 768px) --- */
+@media (max-width: 768px) {
+    /* Força a etiqueta a ficar 100% visível o tempo todo */
+    .pet-service-badge {
+        opacity: 1 !important;
+        transform: translateX(-50%) translateY(0) !important;
+        background-color: rgba(255, 255, 255, 0.95);
+        font-size: 11px;
+        padding: 4px 12px;
+        bottom: 15px;
     }
 }

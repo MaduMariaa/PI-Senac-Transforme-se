@@ -3,14 +3,21 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
 }
 
 html{
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;/*deixar bonitinho a ancora das outras seçoes*/
 }
 
 body{
     color: #000;
     background-color: #fff;
     line-height: 1.5;/*Altura entre linhas*/
+}
+
+#inicio {
+    scroll-padding-top: 0 !important;
+    scroll-margin-top: 0 !important;
 }
