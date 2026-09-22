@@ -3,4 +3,4 @@ Projeto Integrador do curso de Desenvolvimento Front-End "Transforme-se", promov
 
 ## Protótipo
 Acesse o projeto no Canva:
-[=https://](https://canva.link/im3h1wg13elnuj8)
+[https://](https://canva.link/im3h1wg13elnuj8)
