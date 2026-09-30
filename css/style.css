@@ -2,9 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 html{
     scroll-behavior: smooth;
@@ -14,7 +14,8 @@ html{
 body{
     color: #000;
     background-color: #fff;
-    line-height: 1.5;/*Altura entre linhas*/
+    line-height: 1.5;
+    font-family: "Cantarell", sans-serif;
 }
 
 #inicio {
