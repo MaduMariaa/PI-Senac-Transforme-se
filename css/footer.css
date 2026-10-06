@@ -1,0 +1,38 @@
+.footer{
+    text-align: center;
+    background-color: #f1f1f1;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.localizacao{
+    border-left: 2px solid rgb(201, 176, 180); 
+    margin: 15px; 
+    width: 200px;
+
+}
+
+.contato{
+    border-left: 2px solid rgb(201, 176, 180); 
+    padding-left: 15px; 
+    margin-left: 100px; 
+    width: 200px;
+    
+}
+
+.contato h3{    
+    padding: 30px;
+}
+
+.logo2{
+    width: 190px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.by{
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+}

@@ -73,9 +73,10 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     border-radius: 50px;  
-    box-shadow: 0 4px 15px rgba(196, 118, 131, 0.4);
+    box-shadow: 0 8px 15px rgba(196, 118, 131, 0.4);
     transition: background-color 0.5s, color 0.5s;
-    margin-top: 30px;
+    margin: 30px;
+    padding: auto;
 }
 
 .banner-botao:hover {

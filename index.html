@@ -10,18 +10,24 @@
     <link rel="stylesheet" href="css/banner.css">
     <link rel="stylesheet" href="css/carrossel.css">
     <link rel="stylesheet" href="css/catalogo.css">
+    <link rel="stylesheet" href="css/sobre.css">
+    <link rel="stylesheet" href="css/avaliacao.css">
+    <link rel="stylesheet" href="css/footer.css">
  <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
 <body id="inicio">
-    <header class="navbar">
-        <a href="#inicio">
-        <img class="logo" src="imagens/logo.png">
+    <header class="navbar">            
+        <a href="#inicio" href="javascript:location.reload();">
+
+            <img class="logo" src="imagens/logo.png" alt="Logo da Empresa">
         </a>
         <nav>
             <a href="#inicio" class="navitem">HOME</a>
             <a href="#banho" class="navitem">BANHO E TOSA</a>
             <a href="#produtos" class="navitem">PRODUTOS</a>
+            <a href="#sobre" class="navitem">SOBRE NÓS</a>
+            <a href="#avaliacao" class="navitem">AVALIAÇÕES</a>
             <a href="#contato" class="navitem">CONTATO</a>
         </nav>
     </header>
@@ -66,13 +72,13 @@
                 <!-- Foto 4 -->
                 <div class="carrossel-item">
                     <span class="pet-service-badge">Tosa</span>
-                    <img src="imagens/banho.png" alt="Pet no Studio Pet" loading="lazy">
+                    <img src="imagens/tosa.jfif" alt="Pet no Studio Pet" loading="lazy">
                 </div>
 
                 <!-- Foto 5 -->
                 <div class="carrossel-item">
                     <span class="pet-service-badge">Fotos</span>
-                    <img src="imagens/banho.png" alt="Pet no Studio Pet" loading="lazy">
+                    <img src="imagens/foto-dog.PNG" alt="Pet no Studio Pet" loading="lazy">
                 </div>
 
                 <!-- Foto 6 -->
@@ -85,32 +91,92 @@
                 <div class="carrossel-item"><span class="pet-service-badge">Pacotes Mensais</span><img src="imagens/banho.png" loading="lazy"></div>
                 <div class="carrossel-item"><span class="pet-service-badge">Banho Relaxante</span><img src="imagens/banho.png" loading="lazy"></div>
                 <div class="carrossel-item"><span class="pet-service-badge">Hidratação</span><img src="imagens/banho.png" loading="lazy"></div>
-                <div class="carrossel-item"><span class="pet-service-badge">Tosa</span><img src="imagens/banho.png" loading="lazy"></div>
-                <div class="carrossel-item"><span class="pet-service-badge">Fotos</span><img src="imagens/banho.png" loading="lazy"></div>
+                <div class="carrossel-item"><span class="pet-service-badge">Tosa</span><img src="imagens/tosa.jfif" loading="lazy"></div>
+                <div class="carrossel-item"><span class="pet-service-badge">Fotos</span><img src="imagens/foto-dog.PNG" loading="lazy"></div>
                 <div class="carrossel-item"><span class="pet-service-badge">Táxi Dog</span><img src="imagens/banho.png" loading="lazy"></div>
 
-                </div>
+                
             </div>
+            <a href="Agendamento.html" class="banner-botao">Agendar</a>
         </section>
         <!-- Seção PRODUTOS -->
+         <section class="container" id="produtos">
          <h2 class="titulo">Nossos Produtos</h2>
         
-        <section id="produtos" class="catalogo">
-                <div class="cards"  style="position: relative;"> <img src="imagens/icons8-filhote-de-cachorro-50.png" alt="Cachorro">
+        <main class="catalogo">
+                <div class="cards" > <img src="imagens/icons8-dog-48.png" alt="Cachorro" class="icone">
                     <div class="janelinha-hover">
-                        <img src="imagens/foto-dog.PNG" alt="Ampliada">
+                        <img src="imagens/cachorro.png.jpg" alt="Ampliada">
+                    </div>
+                </div>
+            <div class="cards"> <img src="imagens/icons8-gato-48.png" alt="Gato" class="icone">
+                <div class="janelinha-hover">
+                    <img src="imagens/gato.png.jpg" alt="Ampliada">
                     </div>
                 </div>
 
-            <div class="cards"> <img src="imagens/icons8-gato-48.png" alt=""></div>
-            <div class="cards"> <img src="imagens/icons8-pássaro-48.png" alt=""></div>
-            <div class="cards"> <img src="imagens/icons8-aquário-50.png" alt=""></div>
-            <div class="cards"> <img src="imagens/icons8-jardim-50.png" alt=""></div>
+            <div class="cards"> <img src="imagens/icons8-bird-48.png" alt="Pássarinho" class="icone">
+                <div class="janelinha-hover">
+                    <img src="imagens/passarinho.png.jpg" alt="Ampliada">
+                </div>
+            </div>
+
+            <div class="cards"> <img src="imagens/icons8-clown-fish-48.png" alt="Aquário" class="icone">
+                <div class="janelinha-hover">
+                    <img src="imagens/aquario.png.jfif" alt="Ampliada">
+                </div>
+            </div>
+
+            <div class="cards"> <img src="imagens/icons8-bay-leaf-48.png" alt="Jardim" class="icone">
+                <div class="janelinha-hover">
+                    <img src="imagens/jardim.png.png" alt="Ampliada">
+                </div>
+            </div>
+        </main>
         </section>
-        <!-- Seção CONTATO -->
+        <!-- Seção SOBRE -->
+        
+            
+        <section id="sobre" class="sobreFundo">  
+            <h1 class="carrossel-tagline">Sobre nós</h1>   
+            <div class="sobre">
+                <div class="fotos">
+                <img src="imagens/img.Aline.jfif" class="aline" id="imagem">
+                    <button id="anterior">&#10094;</button>
+                    <button id="proxima">&#10095;</button>
+                </div>
+                <p class="texto">texto</p>
+            </main>
+            </div>
+        </section>
+        <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+    <h1 class="avaliacao" id="avaliacao">Avaliações dos Clientes</h1>
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div id="rewiew"></div>
+    <div class="elfsight-app-5a32acca-5026-4e89-91ac-7afdd9c2f8d5"></div>
+    <script src="js/script.js"></script>
+            <!-- Seção CONTATO -->
         <footer id="contato" class="secao-contato">
-            <img src="imagens/banho.png" alt="">
         </footer>
+
+    <footer class="footer">
+            <div>
+                <a href="#inicio" href="javascript:location.reload();">
+                    <img class="logo2" src="imagens/logo.png" alt="Logo da Empresa">
+                </a>
+            </div>
+            <div class="contato">
+                <h3>Contatos</h3>
+                <img src="imagens/icons8-círculo-do-instagram-30 (2).png" alt="">
+                <img src="imagens/icons8-whatsapp-30.png" alt="">
+            </div>
+            <div class="localizacao">
+                <h3>Localização</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.8087237715!2d-46.684225359542005!3d-23.682797378805155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4fe36bfdf1ef%3A0x2367d461b8c8334a!2sPet%20Shop%20Avenida%20-%20Banho%20e%20Tosa%2C%20Casa%20de%20Ra%C3%A7%C3%A3o%2C%20Jardinagem%20e%20Medicamentos.!5e0!3m2!1spt-BR!2sbr!4v1791245985087!5m2!1spt-BR!2sbr" width="200px" height="200" style="border:0;" allowfullscreen="" loading="lazy" class="localizacao"
+                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>                   
+    </footer>
+    <p class="by">Desenvolvido por &copy; Lume </p>
 </div>
 </body>
 </html>

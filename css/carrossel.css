@@ -3,13 +3,16 @@
     overflow: hidden;
     padding: 20px 0;
     background-color: rgb(241, 231, 236);
-    height: 500px;
+    height: 700px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .carrossel-track {
     display: flex;
     width: max-content; /*deixa a fileira crescer com o n° de img */
-    animation: rodar 22s linear infinite; 
+    animation: rodar 35s linear infinite; 
     will-change: transform;
     backface-visibility: hidden;
     transform: translateZ(0);
@@ -17,8 +20,8 @@
 }
 
 .carrossel-track img {
-    width: 300px;
-    height: 290px;
+    width: 500px;
+    height: 400px;
     object-fit: cover;
     margin: 0 10px;
     border-radius: 8px;
@@ -38,10 +41,10 @@
     content: '';
     position: absolute;
     top: 0;
-    width: 120px; /* Largura do efeito esfumaçado */
+    width: 120px; 
     height: 100%;
     z-index: 5;
-    pointer-events: none; /* Não bloqueia o mouse */
+    pointer-events: none; 
 }
 
 .carrossel-wrapper::before {
@@ -54,7 +57,6 @@
     background: linear-gradient(to left, #f4e3f0 0%, rgba(252, 252, 252, 0) 100%);
 }
 
-/*foto e da etiqueta */
 .carrossel-item {
     position: relative;
     overflow: visible;
@@ -65,7 +67,7 @@
     position: absolute;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%) translateY(10px); /*a etiqueda vem de baixo*/
+    transform: translateX(-50%) translateY(10px); 
     background-color: rgba(255, 255, 255, 0.95);
     color: rgb(196, 118, 131);
     padding: 6px 16px;
@@ -75,37 +77,40 @@
     white-space: nowrap;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 3;
-    opacity: 0; /*esconde a etiqueta*/
+    opacity: 0; 
     transition: all 0.3s ease;
 }
 
-/*hover*/
+
 .carrossel-item:hover .pet-service-badge {
     opacity: 1; /* Revela a etiqueta */
     transform: translateX(-50%) translateY(0); /*Animação pra subir a etiqueta*/
 }
 
 .carrossel-item:hover img {
-    transform: translateY(-5px); /* Dá zoom e flutua a foto */
-    filter: brightness(1.05); /* Acende o brilho da imagem */
+    transform: translateY(-8px);
+    filter: brightness(1.05);
     border-color: rgb(196, 118, 131); /* Borda fica rosa */
 }
 
-.carrossel-header{
-    padding: 30px 0;
-    display: flex;
-    justify-content: center;
-}
-
 .carrossel-tagline{
-    font-size: 16px;
+    display: flex;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 300px;
+    justify-content: center;
     font-weight: bold;
     font-size: large;
     text-transform: uppercase;
     padding: 15px 50px;
-    background-color: #ffff;
+    background-color: white;
     color: rgb(211, 146, 157);
-    border-radius: 50px
+    border-radius: 50px;
+}
+
+.banner-botao{
+
 }
 
 @keyframes rodar {
@@ -128,4 +133,6 @@
         padding: 4px 12px;
         bottom: 15px;
     }
+
+    
 }
