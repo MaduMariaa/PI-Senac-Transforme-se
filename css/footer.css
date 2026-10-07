@@ -1,38 +1,73 @@
-.footer{
-    text-align: center;
-    background-color: #f1f1f1;
-    color: #666;
+.footer {
+    background-color: #f8f9fa; 
+    color: #555555;            
     display: flex;
-    align-items: center;
+    align-items: center;       
+    padding: 30px 100px; 
+    justify-content: space-around;
+    justify-content: space-between;       
 }
 
-.localizacao{
-    border-left: 2px solid rgb(201, 176, 180); 
-    margin: 15px; 
-    width: 200px;
-
+.logo2, .contato, .localizacao {
+    flex: 1;                   
+    text-align: center;   
+ 
 }
 
-.contato{
-    border-left: 2px solid rgb(201, 176, 180); 
-    padding-left: 15px; 
-    margin-left: 100px; 
-    width: 200px;
-    
-}
-
-.contato h3{    
-    padding: 30px;
-}
-
-.logo2{
-    width: 190px;
-    padding: 20px;
-    margin: 20px;
-}
-
-.by{
-    background-color: #f1f1f1;
+.logo2 {
     display: flex;
-    align-items: center;
+    margin-right: 180px; 
+    width: 100px; 
+
+}
+
+.logo2 img {
+    width: 120px;            
+}
+
+
+.contato {
+    max-width: 400px !important; 
+    border-right: 1px solid #dcdcdc;      
+    border-left: 1px solid #dcdcdc; 
+}
+
+.localizacao {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;    
+    text-align: center;     
+    max-width: 300px !important;    
+}
+
+/* Mantém suas estilizações de títulos e links */
+h3 {
+    color: #c0929a;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 12px;       
+    text-transform: uppercase; 
+    letter-spacing: 0.5px;
+}
+
+.localizacao a {
+    text-decoration: underline;
+    text-underline-offset: 4px; 
+    color: #8a414e;
+    transition: color 0.2s ease;
+}
+
+.localizacao a:hover {
+    color: rgb(236, 195, 203);  
+}
+
+/* Espaçamento entre os ícones de redes sociais */
+.contato div, .contato span {
+    display: flex;                
+    justify-content: center;
+}
+
+.contato a:hover{
+    color: rgb(124, 0, 25);  
 }

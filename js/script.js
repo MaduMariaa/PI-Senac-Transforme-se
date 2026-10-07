@@ -36,3 +36,5 @@ function mostrarAnterior(){
     }
     Quadroimagem.src = album[foto];
 }
+
+
