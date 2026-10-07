@@ -46,10 +46,10 @@
 /* --- RESPONSIVIDADE PARA CELULAR (Telas até 768px) --- */
 @media (max-width: 768px) {
     .navbar {
-        justify-content: center;
+        align-items: center;
         padding: 10px;
-        height: 80px; 
-        background-color: rgb(232, 225, 225);
+        height: 100px;
+        width: 100%;
     }
 
     /*oculta o menu*/
@@ -58,8 +58,6 @@
     }
 
     .navbar .logo {
-        height: 80px;
-        width: auto;
-        margin: 0;
+        height: 100px;
     }
 }

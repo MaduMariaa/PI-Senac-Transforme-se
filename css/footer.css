@@ -4,27 +4,23 @@
     display: flex;
     align-items: center;       
     padding: 30px 100px; 
-    justify-content: space-around;
     justify-content: space-between;       
 }
 
 .logo2, .contato, .localizacao {
     flex: 1;                   
     text-align: center;   
- 
 }
 
 .logo2 {
     display: flex;
     margin-right: 180px; 
     width: 100px; 
-
 }
 
 .logo2 img {
     width: 120px;            
 }
-
 
 .contato {
     max-width: 400px !important; 
@@ -40,7 +36,6 @@
     max-width: 300px !important;    
 }
 
-/* Mantém suas estilizações de títulos e links */
 h3 {
     color: #c0929a;
     font-size: 1rem;
@@ -62,12 +57,35 @@ h3 {
     color: rgb(236, 195, 203);  
 }
 
-/* Espaçamento entre os ícones de redes sociais */
 .contato div, .contato span {
     display: flex;                
     justify-content: center;
 }
 
-.contato a:hover{
-    color: rgb(124, 0, 25);  
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        padding: 0px 20px;
+        gap: 30px;
+    }
+
+    .contato, .localizacao {
+        max-width: 100% !important;
+        width: 100%;
+        margin: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo2 {
+        display: none;
+    }
+
+    .contato {
+        border-right: none;
+        border-left: none;
+        border-top: 1px solid #dcdcdc;
+        border-bottom: 1px solid #dcdcdc;
+        padding: 20px 0;
+    }
 }
