@@ -2,9 +2,8 @@
     background-color: #f8f9fa; 
     color: #555555;            
     display: flex;
-    align-items: center;       
-    padding: 30px 100px; 
-    justify-content: space-between;       
+    flex-direction: column; /* Faz o conteúdo principal e os créditos empilharem */
+    padding: 30px 100px;   
 }
 
 .logo2, .contato, .localizacao {
@@ -31,9 +30,26 @@
 .localizacao {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;    
+    align-items: center;    
     text-align: center;     
-    max-width: 300px !important;    
+    max-width: 300px !important;      
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;       
+    justify-content: space-between;
+    width: 100%;
+}
+
+.by{
+    text-align: center;
+    margin-top: 30px; /* Cria um espaçamento elegante separando do conteúdo acima */
+    font-size: 0.85rem;
+    color: #777777;
+    border-top: 1px solid #e0e0e0; /* Opcional: uma linha bem sutil para separar */
+    padding-top: 15px;
+    width: 100%;
 }
 
 h3 {
@@ -64,8 +80,11 @@ h3 {
 
 @media (max-width: 768px) {
     .footer {
-        flex-direction: column;
         padding: 0px 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
         gap: 30px;
     }
 
@@ -87,5 +106,10 @@ h3 {
         border-top: 1px solid #dcdcdc;
         border-bottom: 1px solid #dcdcdc;
         padding: 20px 0;
+        justify-content: space-between;
+    }
+    
+    .by {
+        margin-top: 20px;
     }
 }

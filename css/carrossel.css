@@ -13,7 +13,7 @@
 .carrossel-track {
     display: flex;
     width: max-content; /*deixa a fileira crescer com o n° de img */
-    animation: rodar 35s linear infinite; 
+    animation: rodar 50s linear infinite; 
     will-change: transform;
     backface-visibility: hidden;
     transform: translateZ(0);
@@ -42,7 +42,7 @@
     content: '';
     position: absolute;
     top: 0;
-    width: 120px; 
+    width: 50px; 
     height: 100%;
     z-index: 5;
     pointer-events: none; 
@@ -50,7 +50,7 @@
 
 .carrossel-wrapper::before {
     left: 0;
-    background: linear-gradient(to right, #f4e3f0 0%, rgba(252, 252, 252, 0) 100%);
+    background: linear-gradient(to right, #f4e3f0 0%, rgba(199, 21, 21, 0) 100%);
 }
 
 .carrossel-wrapper::after {
@@ -107,9 +107,6 @@
     border-radius: 50px;
 }
 
-.banner-botao{
-
-}
 
 @keyframes rodar {
     from {

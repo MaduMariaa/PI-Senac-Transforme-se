@@ -5,7 +5,7 @@
     height: 91vh;/*o tanto que o banner ocupa na tela*/
     margin-top: 80px;
 /*Img de fundo*/
-    background-image: url('../imagens/banho.png');
+    background-image: url('../imagens/banhoetosa.jpg');
     background-size: cover; /*cobre todo o espaço para o banner*/
     background-position: center;
     background-repeat: no-repeat;
@@ -21,7 +21,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(66, 19, 52, 0.3); /* Preto com 50% de opacidade */
+    background-color: rgba(0, 0, 0, 0.5); /* Preto com 50% de opacidade */
     z-index: 1; /* Fica acima da foto de fundo */
 }
 
@@ -87,6 +87,6 @@
 @media (max-width: 768px) {
     .banner-principal {
         /* Carrega uma imagem vertical*/
-        background-image: url('../imagens/banho.png'); 
+        background-image: url('../imagens/banhoetosa.jpg'); 
     }
 }
