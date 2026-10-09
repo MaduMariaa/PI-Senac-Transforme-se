@@ -6,16 +6,16 @@
 }
 
 body {
-    background-color: #f8f5f7;
+    background-color: #e6d2d5;
 }
 
 .container {
     max-width: 500px;
-    margin: 40px auto;
+    margin:140px auto;
     background-color: #fff;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
 
 h1 {
@@ -66,4 +66,21 @@ button {
 
 button:hover {
     background-color: #d67283;
+}
+
+.navbar {
+    justify-content: center !important;
+    background-color: white;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 92%;
+        padding: 20px;
+        margin-top: 100px 0px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
 }

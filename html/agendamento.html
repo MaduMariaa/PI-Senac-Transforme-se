@@ -7,39 +7,16 @@
 
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/agendamento.css">
-    <link rel="shortcut icon" href="imagens/Design_sem_nome__1_-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="../imagens/logo.png">
+    <link rel="stylesheet" href="../index.html">
+    <link rel="shortcut icon" href="../imagens/Design_sem_nome__1_-removebg-preview.png" type="image/x-icon">
 </head>
 <body>
-    <!-- <header class="navbar">            
-        <a href="#inicio" href="javascript:location.reload();">
-            <img class="logo" src="imagens/logo.png" alt="Logo da Empresa">
+    <header class="navbar">            
+        <a href="../index.html">
+            <img class="logo" src="../imagens/logo.png" alt="Logo da Empresa">
         </a>
-
-    <nav class="nav-desktop">
-        <a href="#inicio" class="navitem">HOME</a>
-        <a href="#banho" class="navitem">BANHO E TOSA</a>
-        <a href="#produtos" class="navitem">PRODUTOS</a>
-        <a href="#sobre" class="navitem">SOBRE NÓS</a>
-        <a href="#avaliacao" class="navitem">AVALIAÇÕES</a>
-        <a href="#contato" class="navitem">CONTATO</a>
-    </nav>
-
-    <button id="menu" class="menu-toggle" aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
-        </button>
-
-    <nav class="nav-side">
-        <button id="fecharMenu" aria-label="Fechar menu">✕</button>
-
-        <a href="#inicio" class="nav-item">HOME</a>
-        <a href="#banho" class="nav-item">BANHO E TOSA</a>
-        <a href="#produtos" class="nav-item">PRODUTOS</a>
-        <a href="#sobre" class="nav-item">SOBRE NÓS</a>
-        <a href="#avaliacao" class="nav-item">AVALIAÇÕES</a>
-        <a href="#contato" class="nav-item">CONTATO</a>
-    </nav> -->
+    </header>
 
     <div class="container">
         <h1>Agendar Banho</h1>
@@ -47,35 +24,32 @@
 
         <form id="agendamentoForm">
 
-            <label for="tutor"><strong>Nome do Tutor</strong></label>
+            <label for="tutor">Nome do Tutor</label>
             <input type="text" id="tutor" placeholder="Digite seu nome" required>
 
-            <label for="pet"><strong>Nome do Pet</strong></label>
+            <label for="pet">Nome do Pet</label>
             <input type="text" id="pet" placeholder="Nome do pet" required>
 
-            <label for="porte"><strong>Porte do Pet</strong></label>
+            <label for="porte">Porte do Pet</label>
             <select id="porte">
                 <option>Pequeno</option>
                 <option>Médio</option>
                 <option>Grande</option>
             </select>
 
-            <label for="telefone"><strong>Telefone</strong></label>
-            <input type="number" id="telefone" placeholder="(00) 00000-0000" required>
-
-            <label for="data"><strong>Data</strong></label>
+            <label for="data">Data</label>
             <input type="date" id="data" required>
 
-            <label for="hora"><strong>Horário</strong></label>
+            <label for="hora">Horário</label>
             <input type="time" id="hora" required>
 
-            <label for="obs"><strong>Observações</strong></label>
+            <label for="obs">Observações</label>
             <textarea id="obs" rows="4" placeholder="Informações adicionais"></textarea>
 
             <button type="submit">Agendar Banho</button>
 
         </form>
     </div>
-    <script src="js/script.js"></script>
+    <script src="../js/jsAgedamento.js"></script>
 </body>
 </html>
