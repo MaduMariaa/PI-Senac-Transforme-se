@@ -141,4 +141,8 @@
     animation: rodar 30s linear infinite; 
     }
 
+    .carrossel-wrapper:hover .carrossel-track {
+        animation-play-state: inherit;
+    }
+
 }
