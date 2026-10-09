@@ -107,10 +107,6 @@
     border-radius: 50px;
 }
 
-.carrossel-wrapper:hover .carrossel-track {
-    animation-play-state: paused;
-}
-
 @keyframes rodar {
     from {
         transform: translateX(0);
