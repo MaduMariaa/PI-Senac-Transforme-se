@@ -107,6 +107,9 @@
     border-radius: 50px;
 }
 
+.carrossel-wrapper:hover .carrossel-track {
+    animation-play-state: paused;
+}
 
 @keyframes rodar {
     from {
@@ -128,6 +131,14 @@
         padding: 4px 12px;
         bottom: 15px;
     }
-
     
+    .carrossel-track img {
+    width: 300px;
+    height: 400px;
+    }
+
+    .carrossel-track {
+    animation: rodar 30s linear infinite; 
+    }
+
 }

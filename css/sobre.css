@@ -40,6 +40,8 @@
     height: 400px;
     margin: auto;
     border-radius: 20px;
+    touch-action: pan-y;
+    user-select: none;
 }
 
 .texto{

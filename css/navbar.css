@@ -1,32 +1,38 @@
-.navbar{
-    background-color: #f8f0f0; 
+.navbar {
+    background-color: #f8f0f0;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 12px 24px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    align-items: center;
     height: 80px;
     box-sizing: border-box;
     z-index: 1000;
 }
 
-.navbar nav{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex: 1;
-    margin-right: 80px;
+.logo {
+    width: 80px;
+    height: auto;
+    margin-left: 20px;
+    cursor: pointer;
 }
 
-.navitem{
+.navbar nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.navitem {
     color: rgb(196, 118, 131);
     padding: 12px;
     text-decoration: none;
     font-size: 15px;
-    background: none;
-    border: none;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -36,29 +42,136 @@
     color: rgb(161, 11, 88);
 }
 
-.logo {
-    margin-left: 40px;
-    cursor: pointer;
-    width: 80px;
-    /* deixar a imagem na esquerda */
+/* Computador */
+.navbar .nav-desktop {
+    display: flex;
 }
 
-/* --- RESPONSIVIDADE PARA CELULAR (Telas até 768px) --- */
+.navbar .menu-toggle {
+    display: none;
+}
+
+.navbar .nav-side {
+    display: none;
+}
+
+/* Menu para celular */
+.nav-side {
+    display: none;
+}
+
+/* Telas de até 768px */
 @media (max-width: 768px) {
     .navbar {
-        justify-content: center;
-        padding: 10px;
-        height: 100px;
-        width: 100%;
+        justify-content: space-between;
+        height: 80px;
+        padding: 10px 20px;
     }
 
-    /*oculta o menu*/
-    .navbar nav {
+    .logo {
+        width: 70px;
+        height: auto;
+        margin: 0;
+    }
+
+    .navbar .nav-desktop {
         display: none !important;
     }
 
-    .navbar .logo {
-        height: 100px;
-        margin: auto;
+    .navbar .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+
+        width: 30px;
+        height: 30px;
+        padding: 0px;
+        background: none;
+        border: none;
+    }
+
+    .navbar .menu-toggle span {
+        display: block;
+        width: 20px;
+        height: 3px;
+        background-color: rgb(194, 130, 141);
+        border-radius: 4px;
+    }
+
+    .navbar .nav-side {
+        display: flex;
+    }
+
+    /* Hambúrguer no canto direito */
+    .menu-toggle {
+    display: flex;
+    margin-left: auto;
+    order: 2;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    }
+
+.nav-side {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+    padding: 25px 20px;
+    box-sizing: border-box;
+
+    background-color: #f8f0f0;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+    transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.nav-side.aberto {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+    .nav-side .nav-item {
+        display: block;
+        color: rgb(196, 118, 131);
+        text-decoration: none;
+        padding: 12px;
+        text-align: left;
+    }
+
+    .nav-side .nav-item:hover {
+        background-color: #ffffff;
+        color: rgb(161, 11, 88);
+    }
+
+    #fecharMenu {
+        align-self: flex-end;
+        background: none;
+        border: none;
+        color: rgb(196, 118, 131);
+        font-size: 25px;
+        cursor: pointer;
+        padding: 5px 10px;
     }
 }

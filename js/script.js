@@ -37,4 +37,52 @@ function mostrarAnterior(){
     Quadroimagem.src = album[foto];
 }
 
+// Variáveis para armazenar as coordenadas iniciais e finais do toque
+let touchStartX = 0;
+let touchEndX = 0;
+
+// Registra o ponto onde o usuário tocou na tela
+Quadroimagem.addEventListener('touchstart', function(event) {
+    touchStartX = event.changedTouches[0].screenX;
+}, { passive: true });
+
+// Registra o ponto onde o usuário soltou a tela e verifica a direção
+Quadroimagem.addEventListener('touchend', function(event) {
+    touchEndX = event.changedTouches[0].screenX;
+    lidarComArrasto();
+}, { passive: true });
+
+// Função que calcula a direção do arrasto
+function lidarComArrasto() {
+    // Define uma distância mínima (em pixels) para ser considerado um arrasto intencional
+    const limiteArrasto = 50; 
+
+    // Se a posição inicial for maior que a final, o usuário arrastou para a ESQUERDA (Próxima foto)
+    if (touchStartX - touchEndX > limiteArrasto) {
+        mostrarProximo();
+    }
+    // Se a posição final for maior que a inicial, o usuário arrastou para a DIREITA (Foto anterior)
+    else if (touchEndX - touchStartX > limiteArrasto) {
+        mostrarAnterior();
+    }
+}
+
+const menu = document.querySelector("#menu");
+const side = document.querySelector(".nav-side");
+const fecharMenu = document.querySelector("#fecharMenu");
+const navItem = document.querySelectorAll(".nav-item");
+
+menu.addEventListener("click", function() {
+    side.classList.add("aberto");
+});
+
+fecharMenu.addEventListener("click", function() {
+    side.classList.remove("aberto");
+});
+
+navItem.forEach(function(item) {
+    item.addEventListener("click", function() {
+        side.classList.remove("aberto");
+    });
+});
 
