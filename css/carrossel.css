@@ -121,11 +121,11 @@
     /* Força a etiqueta a ficar 100% visível o tempo todo */
     .pet-service-badge {
         opacity: 1 !important;
-        transform: translateX(-50%) translateY(0) !important;
         background-color: rgba(255, 255, 255, 0.95);
         font-size: 11px;
-        padding: 4px 12px;
-        bottom: 15px;
+        padding: 10px 12px;
+        bottom: 25px;
+        transition: all 0.3s ease;
     }
     
     .carrossel-track img {

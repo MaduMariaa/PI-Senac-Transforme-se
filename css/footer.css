@@ -3,7 +3,7 @@
     color: #555555;            
     display: flex;
     flex-direction: column; /* Faz o conteúdo principal e os créditos empilharem */
-    padding: 30px 100px;   
+    padding: 30px 90px;   
 }
 
 .logo2, .contato, .localizacao {
@@ -60,6 +60,15 @@ h3 {
     margin-bottom: 12px;       
     text-transform: uppercase; 
     letter-spacing: 0.5px;
+}
+
+p {
+    color: rgb(75, 45, 45);
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    font-weight: 300;
+    font-family: 'Fredoka', sans-serif;
 }
 
 .localizacao a {
