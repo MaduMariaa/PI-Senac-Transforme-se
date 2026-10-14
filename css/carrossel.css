@@ -21,8 +21,8 @@
 }
 
 .carrossel-track img {
-    width: 500px;
-    height: 400px;
+    width: 400px;
+    height: 500px;
     object-fit: cover;
     margin: 0 10px;
     border-radius: 8px;

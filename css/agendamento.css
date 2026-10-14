@@ -1,86 +1,211 @@
+/* ===== Variáveis (mude aqui para trocar as cores do formulário) ===== */
+:root {
+    --cor-primaria: #db9bc3;
+    --cor-primaria-escura: #862168;
+    --cor-foco: rgba(122, 43, 103, 0.25);
+    --cor-texto: #21282b;
+    --cor-suave: #6d4d6d;
+    --cor-borda: #af96a9;
+    --cor-fundo: #e6dbe5d7;
+    --cor-campo: #ffffff;
+    --raio: 12px;
+}
+
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-color: #e6d2d5;
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.5;
 }
 
+.navbar{
+    background-color: white;
+    justify-content: center;
+}
+
+/* ===== Container do formulário ===== */
 .container {
-    max-width: 500px;
-    margin:140px auto;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    max-width: 520px;
+    margin: 100px auto;
+    padding: 32px;
+    background: var(--cor-campo);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(38, 70, 83, 0.08);
 }
 
-h1 {
-    text-align: center;
-    color: #e38c99;
-    margin-bottom: 10px;
+.container h1 {
+    margin: 0 0 8px;
+    font-size: 1.75rem;
 }
 
-p {
-    text-align: center;
-    color: #666;
-    margin-bottom: 25px;
+.container > p {
+    margin: 0 0 8px;
+    color: var(--cor-suave);
+}
+
+.horario {
+    padding: 10px 14px;
+    border-left: 4px solid var(--cor-primaria);
+    background: var(--cor-fundo);
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 24px !important;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 18px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 label {
-    font-weight: bold;
-    color: #444;
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 
+.legenda {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--cor-suave);
+}
+
+/* ===== Campos: input, textarea e select ===== */
 input,
-select,
-textarea {
+textarea,
+select {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    outline: none;
+    padding: 12px 14px;
+    font: inherit;
+    font-size: 1rem; /* 16px evita zoom automático no iPhone */
+    color: var(--cor-texto);
+    background: var(--cor-campo);
+    border: 1.5px solid var(--cor-borda);
+    border-radius: var(--raio);
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+textarea {
+    resize: vertical;
+}
 
-button {
-    background-color: #e38c99;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
+input:hover,
+textarea:hover,
+select:hover {
+    border-color: #b4c3c9;
+}
+
+/* Efeito de foco */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 4px var(--cor-foco);
+}
+
+/* ===== Dropdown personalizado ===== */
+.select-wrapper {
+    position: relative;
+}
+
+select {
+    appearance: none;          /* remove a seta padrão do navegador */
+    -webkit-appearance: none;
+    padding-right: 44px;       /* espaço para a seta customizada */
     cursor: pointer;
-    transition: 0.3s;
+}
+
+/* Seta customizada */
+.select-wrapper::after {
+    content: "";
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--cor-suave);
+    border-bottom: 2px solid var(--cor-suave);
+    transform: translateY(-70%) rotate(45deg);
+    pointer-events: none;      /* o clique passa para o select */
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+/* Seta gira e muda de cor quando o select está em foco */
+.select-wrapper:focus-within::after {
+    border-color: var(--cor-primaria);
+    transform: translateY(-30%) rotate(-135deg);
+}
+
+/* Texto "Selecione" em cinza enquanto nada foi escolhido */
+select:invalid {
+    color: var(--cor-suave);
+}
+
+select option {
+    color: var(--cor-texto);
+}
+
+/* ===== Resumo da seleção ===== */
+.resumo {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--cor-primaria-escura);
+    min-height: 1.2em;
+}
+
+/* ===== Botão ===== */
+button {
+    padding: 14px;
+    font: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    background: var(--cor-primaria);
+    border: none;
+    border-radius: var(--raio);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
 }
 
 button:hover {
-    background-color: #d67283;
+    background: var(--cor-primaria-escura);
 }
 
-.navbar {
-    justify-content: center !important;
-    background-color: white;
+button:active {
+    transform: scale(0.98);
 }
 
-@media (max-width: 768px) {
+button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--cor-foco);
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 600px) {
     .container {
-        width: 92%;
-        padding: 20px;
-        margin-top: 100px 0px;
+        margin: 16px;
+        margin-top: 100px;
+        padding: 22px;
+        border-radius: 16px;
     }
-    
-    h1 {
+
+    .container h1 {
         font-size: 1.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
     }
 }

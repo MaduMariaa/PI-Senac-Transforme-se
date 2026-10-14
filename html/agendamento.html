@@ -17,39 +17,75 @@
             <img class="logo" src="../imagens/logo.png" alt="Logo da Empresa">
         </a>
     </header>
-
-    <div class="container">
+<body>
+    <main class="container">
         <h1>Agendar Banho</h1>
         <p>Preencha os dados abaixo para realizar o agendamento.</p>
+        <p class="horario">Horário de funcionamento:<br>Segunda a sexta, das 09h às 18h</p>
 
         <form id="agendamentoForm">
 
-            <label for="tutor">Nome do Tutor</label>
-            <input type="text" id="tutor" placeholder="Digite seu nome" required>
+            <div class="campo">
+                <label for="tutor">Nome do Tutor</label>
+                <input type="text" id="tutor" name="tutor" placeholder="Digite seu nome" required>
+            </div>
 
-            <label for="pet">Nome do Pet</label>
-            <input type="text" id="pet" placeholder="Nome do pet" required>
+            <div class="campo">
+                <label for="pet">Nome do Pet</label>
+                <input type="text" id="pet" name="pet" placeholder="Nome do pet" required>
+            </div>
 
-            <label for="porte">Porte do Pet</label>
-            <select id="porte">
-                <option>Pequeno</option>
-                <option>Médio</option>
-                <option>Grande</option>
-            </select>
+            <div class="campo">
+                <label for="porte">Porte do Pet</label>
+                <div class="select-wrapper">
+                    <select id="porte" name="porte" required>
+                        <option value="" selected disabled>Selecione</option>
+                        <option value="pequeno">Pequeno</option>
+                        <option value="medio">Médio</option>
+                        <option value="grande">Grande</option>
+                    </select>
+                </div>
+            </div>
 
-            <label for="data">Data</label>
-            <input type="date" id="data" required>
+            <div class="campo">
+                <label for="procedimento">Procedimento</label>
+                <p class="legenda" id="procedimento-legenda">Incluso corte de unhas</p>
+                <div class="select-wrapper">
+                    <select id="procedimento" name="procedimento" aria-describedby="procedimento-legenda" required>
+                        <option value="" selected disabled>Selecione</option>
+                        <option value="banho">Banho</option>
+                        <option value="banho-tosa-geral">Banho + Tosa Geral</option>
+                        <option value="banho-tosa-tesoura">Banho + Tosa na Tesoura</option>
+                        <option value="banho-subpelo">Banho + Remoção de Subpelo</option>
+                    </select>
+                </div>
+            </div>
 
-            <label for="hora">Horário</label>
-            <input type="time" id="hora" required>
+            <div class="campo">
+                <label for="periodo">Período Desejado</label>
+                <div class="select-wrapper">
+                    <select id="periodo" name="periodo" required>
+                        <option value="" selected disabled>Selecione</option>
+                        <option value="manha">Manhã</option>
+                        <option value="tarde">Tarde</option>
+                    </select>
+                </div>
+            </div>
 
-            <label for="obs">Observações</label>
-            <textarea id="obs" rows="4" placeholder="Informações adicionais"></textarea>
+            <div class="campo">
+                <label for="obs">Observações</label>
+                <textarea id="obs" name="obs" rows="4" placeholder="Informações adicionais"></textarea>
+            </div>
+
+            <p class="resumo" id="resumo" aria-live="polite"></p>
 
             <button type="submit">Agendar Banho</button>
-
+            <p class="legenda">
+                A disponibilidade será confirmada posteriormente pela equipe do Studio Pet via WhatsApp.
+            </p>
         </form>
-    </div>
+    </main>
+
     <script src="../js/jsAgedamento.js"></script>
 </body>
 </html>

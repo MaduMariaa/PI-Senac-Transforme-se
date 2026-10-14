@@ -46,13 +46,14 @@
 
 .texto{
     max-width: 500px;
+    font-size: 18px;
     margin: auto;
     justify-content: center;
     align-items: center;
     margin-left: 100px;
     text-align: justify;
     font-weight: bold;
-    color: rgb(170, 113, 123);
+    color: rgb(170, 113, 123) !important;
 }
 
 button{
