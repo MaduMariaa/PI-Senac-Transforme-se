@@ -1,11 +1,11 @@
 .sobreFundo{
-    background-color: rgb(241, 231, 236);
-    padding: 5px;
-    margin-bottom: 50px;  
+    background: linear-gradient(to bottom, #f1a5b2, #fce8c4);
+    padding-top: 6px;
+    min-height: 10vh; /* Garante que o fundo cubra a tela inteira se necessário */
+    padding-top: 6px;
 }
 
 .sobre{
-    background-color: rgb(241, 231, 236);
     display: flex;
     min-height: 450px; /* Mudado de height para min-height para evitar cortes */
     max-width: 1200px; /* Define um limite máximo elegante para telas grandes */
@@ -36,26 +36,48 @@
 }
 
 .aline{
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
+     object-fit: cover;
     margin: auto;
     border-radius: 20px;
     touch-action: pan-y;
     user-select: none;
 }
 
-.texto{
-    max-width: 500px;
-    font-size: 18px;
-    margin: auto;
+/* Organiza o título e os parágrafos um embaixo do outro */
+.texto {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-left: 100px;
-    text-align: justify;
-    font-weight: bold;
-    color: rgb(170, 113, 123) !important;
+    max-width: 500px;
 }
 
+/* Estilo do título principal (Studio Pet nasceu...) */
+.texto h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff; /* Defina a cor do seu texto aqui (ex: white) */
+    line-height: 1.3;
+    margin-bottom: 25px; /* Substitui os <br> antigos com precisão */
+}
+
+/* Estilo do bloco descritivo (Com mais de 15 anos...) */
+.texto .resumo {
+    font-size: 18px;
+    font-weight: normal;
+    color: #ffffff;
+    line-height: 1.6; /* Dá o espaçamento perfeito entre linhas igual ao da imagem */
+    margin-bottom: 15px;
+}
+
+/* Estilo da frase final (Venham nos visitar...) */
+.texto .resumo-chamada {
+    font-size: 18px;
+    font-weight: bold; /* Um leve destaque para a chamada de ação */
+    color: #ffffff;
+    line-height: 1.6;
+}
 button{
     position: absolute;
     z-index: 2;
@@ -89,7 +111,7 @@ button:hover{
     .sobre {
         flex-direction: column;
         height: auto;
-        padding: 20px;
+        padding: 10px;
         text-align: center;
     }
 
@@ -107,7 +129,7 @@ button:hover{
 
     .texto {
         margin-left: 0;
-        margin-top: 20px;
+        margin-top: -10px;
         text-align: center;
     }
 

@@ -2,7 +2,9 @@
     width: 100%;
     overflow: hidden;
     padding: 20px 0;
-    background-color: rgb(241, 231, 236);
+    background: linear-gradient(to bottom, rgb(241, 165, 178), #fce8c4);
+    padding-top: 6px;
+    min-height: 10vh; /* Garante que o fundo cubra a tela inteira se necessário */
     height: 700px;
     justify-content: center;
     align-items: center;
@@ -13,7 +15,7 @@
 .carrossel-track {
     display: flex;
     width: max-content; /*deixa a fileira crescer com o n° de img */
-    animation: rodar 50s linear infinite; 
+    animation: rodar 30s linear infinite !important; 
     will-change: transform;
     backface-visibility: hidden;
     transform: translateZ(0);
@@ -34,7 +36,7 @@
 .carrossel-wrapper {
     position: relative;
     width: 100%;
-    overflow: hidden;
+
 }
 
 .carrossel-wrapper::before,
@@ -104,7 +106,36 @@
     padding: 15px 50px;
     background-color: white;
     color: rgb(211, 146, 157);
-    border-radius: 50px;
+    border-radius: 10px !important;
+}
+
+.carrossel-botao{
+    background-color: oklch(93.804% 0.05171 82.267);
+    display: flex;
+    height: 90px;
+}
+
+.carrossel-botao a{
+    display: inline-block;
+    background-color: rgb(196, 118, 131);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 36px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;  
+    box-shadow: 0 8px 15px rgba(196, 118, 131, 0.4);
+    transition: background-color 0.5s, color 0.5s;
+    margin: 30px;
+    padding: auto;
+    margin: auto;
+}
+
+.carrossel-botao a:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(161, 11, 88);
 }
 
 @keyframes rodar {
@@ -126,6 +157,10 @@
         padding: 10px 12px;
         bottom: 25px;
         transition: all 0.3s ease;
+    }
+
+    .carrossel{
+        margin-bottom: -100px;
     }
     
     .carrossel-track img {

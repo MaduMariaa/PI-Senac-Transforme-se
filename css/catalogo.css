@@ -23,7 +23,7 @@
     cursor: pointer;
     width: 90px;
     height: 90px;
-    background-color: rgb(211, 146, 157);
+    background-color: rgb(241, 165, 178);
     position: relative;
 }
 
@@ -77,9 +77,9 @@
     font-size: large;
     text-transform: uppercase;
     padding: 15px 50px;
-    background-color: rgb(211, 146, 157);
-    color: white;
-    border-radius: 50px;
+    background-color: rgb(241, 165, 178);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
 }
 
 /* --- REGRAS PARA O CELULAR --- */

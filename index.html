@@ -105,13 +105,14 @@
                 <div class="carrossel-item"><span class="pet-service-badge">Banho Relaxante</span><img src="imagens/banhorelaxante.jfif" loading="lazy"></div>
                 <div class="carrossel-item"><span class="pet-service-badge">Hidratação</span><img src="imagens/hidratacao.webp" loading="lazy"></div>
                 <div class="carrossel-item"><span class="pet-service-badge">Tosa</span><img src="imagens/tosa.png" loading="lazy"></div>
-                <div class="carrossel-item"><span class="pet-service-badge">Táxi Dog</span><img src="imagens/gato.jpg" loading="lazy"></div>
+                <div class="carrossel-item"><span class="pet-service-badge">Banho em Gato</span><img src="imagens/gatofoto.png" loading="lazy"></div>
 
                 
             </div>
-
-            <a href="html/agendamento.html" class="banner-botao">Agendar</a>
         </section>
+        <div class="carrossel-botao">
+        <a href="html/agendamento.html">Agendar</a>
+        </div>
         <!-- Seção PRODUTOS -->
          <section class="container" id="produtos">
          <h2 class="titulo">Nossos Produtos</h2>
@@ -149,24 +150,39 @@
         </section>
         <!-- Seção SOBRE -->
         
-            
-        <section id="sobre" class="sobreFundo">  
-            <h1 class="carrossel-tagline">Sobre nós</h1>   
-            <div class="sobre">
-                <div class="fotos">
-                <img src="imagens/img.Aline.jfif" class="aline" id="imagem">
-                    <button id="anterior">&#10094;</button>
-                    <button id="proxima">&#10095;</button>
-                </div>
-                <p class="texto">Aline Mosken iniciou sua carreira aos 15 anos e, ao longo dos anos, conquistou diversos prêmios e certificações na área pet. Com dedicação, experiência e paixão pelos animais, fundou seu próprio estúdio de banho e tosa. <br> <br>Atualmente, é proprietária do Studio Pet, oferecendo serviços com qualidade, carinho e profissionalismo para o bem-estar dos pets.</p>
-            </main>
-            </div>
-        </section>
+<section id="sobre" class="sobreFundo">  
+    <h1 class="carrossel-tagline">Sobre nós</h1>   
+    <div class="sobre">
+        <div class="fotos">
+            <img src="imagens/img.Aline.jfif" class="aline" id="imagem">
+            <button id="anterior">❮</button>
+            <button id="proxima">❯</button>
+        </div>
+
+        <!-- O bloco de texto agora envelopa o título E o parágrafo -->
+        <div class="texto">
+            <h1>Studio Pet nasceu pela Aline Mosken e sua paixão pelos animais.</h1>
+            <p class="resumo">
+                Com mais de 15 anos de experiência, conquistou diversos prêmios e certificações na área pet. 
+                Com dedicação, disciplina e paixão fundou seu próprio estúdio de banho e tosa com sua família.
+            </p>
+            <p class="resumo-chamada">
+                Venham nos visitar e dar ao seu amiguinho o tratamento que ele merece.
+            </p>
+        </div>
+    </div> 
+</section>
+
+        <div class="cardInclinado"></div>
         <!-- Elfsight Google Reviews | Untitled Google Reviews -->
     <h1 class="avaliacao" id="avaliacao">Avaliações dos Clientes</h1>
     <script src="https://elfsightcdn.com/platform.js" async></script>
     <div id="rewiew"></div>
     <div class="elfsight-app-5a32acca-5026-4e89-91ac-7afdd9c2f8d5"></div>
+
+    <div class="fotogrande">
+        <img src="imagens/fotobanheira.png">
+    </div>
 
             <!-- Seção CONTATO -->
         <footer id="contato" class="secao-contato">
@@ -205,10 +221,20 @@
             </div>
         </div>     
         <div>
-            <p class="by">Desenvolvido por <a href="https://brukarua.github.io/lume/"> &copy; Lume </a></p>
+            <p class="by">Desenvolvido por <a href="https://brukarua.github.io/lume/"> &copy; Lume. </a> <br> Todos os direitos reservados</p>
         </div>              
     </footer>
     </div>
+    <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
     <script src="js/script.js"></script>
 </body>
 </html>
