@@ -169,6 +169,11 @@
         height: 400px;
     }
 
+    .titulo2{
+        font-size: 30px;
+        margin-top: 10px;
+    }
+
     .carrossel-track {
         animation: rodar 30s linear infinite; 
     }
