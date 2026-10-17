@@ -22,3 +22,8 @@ body{
     scroll-padding-top: 0 !important;
     scroll-margin-top: 0 !important;
 }
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}

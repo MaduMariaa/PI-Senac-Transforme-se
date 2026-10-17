@@ -1,20 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
 .carrossel {
     width: 100%;
     overflow: hidden;
-    padding: 20px 0;
-    background: linear-gradient(to bottom, rgb(241, 165, 178), #fce8c4);
+    padding: 20px 0 40px 0; 
     padding-top: 6px;
-    min-height: 10vh; /* Garante que o fundo cubra a tela inteira se necessário */
-    height: 700px;
-    justify-content: center;
-    align-items: center;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    gap: 20px; 
+    
     text-align: center;
     font-family: "Cantarell", sans-serif !important;
 }
-
 .carrossel-track {
     display: flex;
-    width: max-content; /*deixa a fileira crescer com o n° de img */
+    width: max-content;
     animation: rodar 30s linear infinite !important; 
     will-change: transform;
     backface-visibility: hidden;
@@ -28,24 +30,26 @@
     object-fit: cover;
     margin: 0 10px;
     border-radius: 8px;
-    flex-shrink: 0; /* não deixa a imagem encolher */
+    flex-shrink: 0; 
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, filter 0.3s ease, border-color 0.3s ease; 
 }
 
-
-/*Efeito lateral*/
 .carrossel-wrapper {
     position: relative;
     width: 100%;
-
 }
 
 .carrossel-wrapper::before,
 .carrossel-wrapper::after {
     content: '';
     position: absolute;
-    top: 0;
-    width: 50px; 
-    height: 100%;
+    
+    /* ALINHAMENTO COM A POSIÇÃO DAS FOTOS: */
+    top: 20px !important; /* Alinha exatamente com o 'margin-top: 20px' do seu .carrossel-track */
+    height: 500px !important; /* Força o efeito a ter a altura exata da tag '.carrossel-track img' */
+    
+    width: 60px; 
     z-index: 5;
     pointer-events: none; 
 }
@@ -65,7 +69,7 @@
     overflow: visible;
 }
 
-/*Etiqueta invisível por padrão*/
+/* Etiqueta invisível por padrão */
 .pet-service-badge {
     position: absolute;
     bottom: 20px;
@@ -84,43 +88,42 @@
     transition: all 0.3s ease;
 }
 
-
 .carrossel-item:hover .pet-service-badge {
     opacity: 1; /* Revela a etiqueta */
-    transform: translateX(-50%) translateY(0); /*Animação pra subir a etiqueta*/
+    transform: translateX(-50%) translateY(0); /* Animação pra subir a etiqueta */
 }
 
 .carrossel-item:hover img {
     transform: translateY(-8px);
     filter: brightness(1.05);
-    border-color: rgb(196, 118, 131); /* Borda fica rosa */
+    box-shadow: 0 8px 15px rgba(61, 40, 43, 0.4);
 }
 
-.carrossel-tagline{
+.titulo2 {
     display: flex;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 50px;
-    width: 300px;
     justify-content: center;
-    padding: 15px 50px;
-    background-color: white;
-    color: rgb(211, 146, 157);
-    border-radius: 10px !important;
+    font-size: 50px; 
+    font-weight: 800; 
+    letter-spacing: 5px;
+    margin: 0 0 16px 0;
+    font-family: 'Fredoka', sans-serif !important; 
+    color: #b17680;
+    text-align: center;
 }
 
-.carrossel-botao{
-    background-color: oklch(91.219% 0.0498 65.129);
+.carrossel-botao {
     display: flex;
     height: 90px;
+    justify-content: center; /* Alinha horizontalmente o botão interno */
+    align-items: center; /* Alinha verticalmente o botão interno */
 }
 
-.carrossel-botao a{
+.carrossel-botao a {
     display: inline-block;
     background-color: rgb(196, 118, 131);
     color: #ffffff;
     text-decoration: none;
-    padding: 14px 36px;
+    padding: 14px 36px; /* CORRIGIDO: Removido o 'padding: auto' duplicado de baixo */
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
@@ -128,12 +131,10 @@
     border-radius: 50px;  
     box-shadow: 0 8px 15px rgba(196, 118, 131, 0.4);
     transition: background-color 0.5s, color 0.5s;
-    margin: 30px;
-    padding: auto;
-    margin: auto;
+    margin: auto; /* CORRIGIDO: Removido margens conflitantes */
 }
 
-.carrossel-botao a:hover{
+.carrossel-botao a:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(161, 11, 88);
 }
@@ -143,7 +144,7 @@
         transform: translateX(0);
     }
     to {
-        transform: translateX(-50%); /*Anda até a metade por conta das duplicadas */
+        transform: translateX(-50%); /* Anda até a metade por conta das duplicadas */
     }
 }
 
@@ -156,24 +157,26 @@
         font-size: 11px;
         padding: 10px 12px;
         bottom: 25px;
+        transform: translateX(-50%) translateY(0); /* Garante o posicionamento correto no mobile sem herdar o pulo do hover */
         transition: all 0.3s ease;
     }
-
-    .carrossel{
-        margin-bottom: -100px;
-    }
     
+    .carrossel-item:hover img {
+    transform: none;
+    }
     .carrossel-track img {
-    width: 300px;
-    height: 400px;
+        width: 300px;
+        height: 400px;
     }
 
     .carrossel-track {
-    animation: rodar 30s linear infinite; 
+        animation: rodar 30s linear infinite; 
     }
 
     .carrossel-wrapper:hover .carrossel-track {
         animation-play-state: inherit;
     }
-
+    .carrossel-wrapper::before, .carrossel-wrapper::after {
+    height: 400px !important;
+    }
 }
