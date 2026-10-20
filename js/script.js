@@ -1,3 +1,52 @@
+// Captura os elementos do DOM usando novos nomes de variáveis
+let acaoAvancar = document.getElementById("botaoAvancar");
+let acaoVoltar = document.getElementById("botaoVoltar");
+let elementoQuadro = document.getElementById("exibicaoMidia");
+let elementoLegenda = document.getElementById("textoLegenda");
+
+// Repositório de imagens e legendas com nome personalizado
+let galeriaPortfolio = [
+    {
+        arquivo: "imagens/panoramica.png",
+        descricao: "Vista Panorâmica do Nosso Espaço"
+    },
+    {
+        arquivo: "imagens/fotoespaco.png",
+        descricao: "Ambiente do Studio Pet"
+    };
+
+// Índice de controle da posição atual
+let indiceAtual = 0;
+
+// Função para renderizar os dados na tela
+function atualizarPainelVisual() {
+    elementoQuadro.src = galeriaPortfolio[indiceAtual].arquivo;
+    elementoLegenda.textContent = galeriaPortfolio[indiceAtual].descricao;
+}
+
+// Função renomeada para avançar
+function proximaMidia() {
+    indiceAtual++;
+    if (indiceAtual >= galeriaPortfolio.length) {
+        indiceAtual = 0;
+    }
+    atualizarPainelVisual();
+}
+
+// Função renomeada para retroceder
+function midiaAnterior() {
+    indiceAtual--;
+    if (indiceAtual < 0) {
+        indiceAtual = galeriaPortfolio.length - 1;
+    }
+    atualizarPainelVisual();
+}
+
+// Eventos vinculados aos novos seletores
+acaoAvancar.addEventListener("click", proximaMidia);
+acaoVoltar.addEventListener("click", midiaAnterior);
+
+
 //Captura o botão "proximo"
 let btnProxima = document.getElementById("proxima");
 //Captura o botão "anterior"

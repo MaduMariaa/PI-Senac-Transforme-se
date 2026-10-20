@@ -64,37 +64,55 @@
     background: linear-gradient(to left, #f4e3f0 0%, rgba(252, 252, 252, 0) 100%);
 }
 
+/* AJUSTE: O item do carrossel agora limita e move tudo junto com a imagem */
 .carrossel-item {
     position: relative;
-    overflow: visible;
+    margin-top: 20px; /* Puxamos o espaçamento do track para cá para alinhar o container inteiro */
+    transition: transform 0.3s ease; /* Sincroniza a subida do bloco todo no hover */
 }
 
-/* Etiqueta invisível por padrão */
+/* Removemos o margin-top do track e passamos para o item */
+.carrossel-track {
+    margin-top: 0px; 
+}
+
+/* Modificamos a margem da imagem para refletir no container pai */
+.carrossel-track img {
+    margin: 0 10px;
+    display: block; /* Remove o espaçamento inferior fantasma do HTML */
+    
+}
+
+/* MODIFICAÇÃO: Ajuste para virar uma faixa perfeita dentro da foto */
 .pet-service-badge {
     position: absolute;
     bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px); 
-    background-color: rgba(255, 255, 255, 0.95);
+    
+    /* Alinha precisamente com as bordas da imagem correspondente */
+    left: 10px;
+    right: 10px;
+    
+    /* Removemos o translateX(-50%) para a faixa se esticar corretamente */
+    transform: translateY(10px); 
+    
+    background-color: rgba(255, 255, 255, 0.85);
     color: rgb(196, 118, 131);
-    padding: 6px 16px;
-    font-size: 13px;
-    font-weight: 600;
-    border-radius: 30px;
-    white-space: nowrap;
+    font-size: 18px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 3;
-    opacity: 0; 
     transition: all 0.3s ease;
+    
+    /* Centraliza o texto e define a altura interna da faixa branca */
+    text-align: center;
+    padding: 12px 0;
 }
 
-.carrossel-item:hover .pet-service-badge {
-    opacity: 1; /* Revela a etiqueta */
-    transform: translateX(-50%) translateY(0); /* Animação pra subir a etiqueta */
+/* Em vez de mover só a foto isolada, movemos o bloco inteiro para a faixa acompanhar a subida */
+.carrossel-item:hover {
+    transform: translateY(-8px);
 }
 
 .carrossel-item:hover img {
-    transform: translateY(-8px);
     filter: brightness(1.05);
     box-shadow: 0 8px 15px rgba(61, 40, 43, 0.4);
 }
@@ -105,7 +123,7 @@
     font-size: 50px; 
     font-weight: 800; 
     letter-spacing: 5px;
-    margin: 0 0 16px 0;
+    margin: 25px 0 16px 0;
     font-family: 'Fredoka', sans-serif !important; 
     color: #b17680;
     text-align: center;
@@ -114,8 +132,8 @@
 .carrossel-botao {
     display: flex;
     height: 90px;
-    justify-content: center; /* Alinha horizontalmente o botão interno */
-    align-items: center; /* Alinha verticalmente o botão interno */
+    justify-content: center; 
+    align-items: center; 
 }
 
 .carrossel-botao a {
@@ -123,7 +141,7 @@
     background-color: rgb(196, 118, 131);
     color: #ffffff;
     text-decoration: none;
-    padding: 14px 36px; /* CORRIGIDO: Removido o 'padding: auto' duplicado de baixo */
+    padding: 14px 36px; 
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
@@ -131,7 +149,7 @@
     border-radius: 50px;  
     box-shadow: 0 8px 15px rgba(196, 118, 131, 0.4);
     transition: background-color 0.5s, color 0.5s;
-    margin: auto; /* CORRIGIDO: Removido margens conflitantes */
+    margin: auto; 
 }
 
 .carrossel-botao a:hover {
@@ -144,26 +162,25 @@
         transform: translateX(0);
     }
     to {
-        transform: translateX(-50%); /* Anda até a metade por conta das duplicadas */
+        transform: translateX(-50%); 
     }
 }
 
 /* --- CONFIGURAÇÃO PARA CELULAR (Telas até 768px) --- */
 @media (max-width: 768px) {
-    /* Força a etiqueta a ficar 100% visível o tempo todo */
+    /* Ajuste da faixa fixa no mobile */
     .pet-service-badge {
         opacity: 1 !important;
-        background-color: rgba(255, 255, 255, 0.95);
-        font-size: 11px;
-        padding: 10px 12px;
-        bottom: 25px;
-        transform: translateX(-50%) translateY(0); /* Garante o posicionamento correto no mobile sem herdar o pulo do hover */
+        background-color: rgba(255, 255, 255, 0.90);
+        font-size: 17px;
+        padding: 10px 0;
+        bottom: 20px;
+        left: 10px;
+        right: 10px;
+        transform: translateY(0); 
         transition: all 0.3s ease;
     }
     
-    .carrossel-item:hover img {
-    transform: none;
-    }
     .carrossel-track img {
         width: 300px;
         height: 400px;
@@ -181,7 +198,9 @@
     .carrossel-wrapper:hover .carrossel-track {
         animation-play-state: inherit;
     }
+    
     .carrossel-wrapper::before, .carrossel-wrapper::after {
-    height: 400px !important;
+        height: 400px !important;
+        top: 20px !important;
     }
 }

@@ -15,25 +15,50 @@
     margin-right: auto;
 }
 
+/* O card agora é invisível e serve apenas para agrupar o círculo, o texto e o hover */
 .cards {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    /* Removemos o tamanho fixo, fundo e border-radius daqui */
+}
+
+/* NOVA CLASSE: Esta será a bola rosa que envolve apenas o ícone */
+.circulo-icone {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    cursor: pointer;
     width: 90px;
     height: 90px;
     background-color: #b17680;
-    position: relative;
+    border-radius: 50%;
+    transition: background-color 0.3s;
 }
 
+/* Quando passar o mouse no card, a bola rosa muda de cor */
+.cards:hover .circulo-icone {
+    background-color: rgb(150, 78, 90);
+}
+
+/* Texto ajustado para ficar bem posicionado abaixo do círculo */
+.nome-icone {
+    margin-top: 10px;       /* Espaço controlado entre a bola e o texto */
+    font-size: 20px;       
+    color: #333;           
+    font-weight: 500;
+    font-family: 'Fredoka', sans-serif !important; 
+}
+
+/* Janelinha de hover ajustada para a nova estrutura */
 .janelinha-hover {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     position: absolute;
-    /* Aqui está a linha que deixa a imagem abaixo do botão (85px a partir do topo do card) */
-    top: 85px; 
+    top: 130px; /* Aumentado para compensar a altura do círculo + texto */
     left: 50%;
     transform: translateX(-50%); 
     width: 300px; 
@@ -47,23 +72,17 @@
     height: auto;
     display: block;
     border-radius: 6px;
-    /* Adicionei uma leve sombra para a imagem se destacar do fundo */
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); 
 }
 
 .cards:hover .janelinha-hover {
-    opacity: 1; /* Fica totalmente visível */
+    opacity: 1; 
     visibility: visible;
     transition-delay: 0.2s;
 }
 
 .icone {
     filter: brightness(0) invert(1);
-}
-
-.cards:hover {
-    background-color: rgb(150, 78, 90);
-    transition: background-color 0.3s, color 0.3s;
 }
 
 /* --- REGRAS PARA O CELULAR --- */
@@ -80,29 +99,26 @@
         cursor: pointer;
     }
   
-    .cards {
+    /* No mobile, diminuímos apenas o círculo do ícone */
+    .circulo-icone {
         width: 80px;
         height: 80px;
     }
 
     .janelinha-hover {
-        /* Garante que a imagem nunca ultrapasse o tamanho da tela do celular */
         width: 85vw; 
         max-width: 280px;
-        /* Mantém abaixo do botão (que agora tem 80px no mobile) */
-        top: 90px; 
+        top: 120px; /* Ajuste para o mobile */
     }
 
-    /* Use esta classe na div "janelinha-hover" dos botões que encostam na borda direita (como o do passarinho) */
     .janelinha-hover.canto {
         left: auto !important;
-        right: -20px !important; /* Em vez de centralizar, alinha pela direita do botão */
+        right: -20px !important; 
         transform: none !important;
     }
 
     .janelinha-hover.canto2 {
         left: 0 !important;
-
         transform: none !important;
     }
 }

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/sobre.css">
     <link rel="stylesheet" href="css/avaliacao.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/espaco.css">
  <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,12 +30,12 @@
         </a>
 
     <nav class="nav-desktop">
-        <a href="#inicio" class="navitem">HOME</a>
-        <a href="#banho" class="navitem">BANHO E TOSA</a>
-        <a href="#produtos" class="navitem">PRODUTOS</a>
-        <a href="#sobre" class="navitem">SOBRE NÓS</a>
-        <a href="#avaliacao" class="navitem">AVALIAÇÕES</a>
-        <a href="#contato" class="navitem">CONTATO</a>
+        <a href="#inicio" class="navitem">Home</a>
+        <a href="#banho" class="navitem">Banho e Tosa</a>
+        <a href="#espaco" class="navitem">Nosso Espaço</a>
+        <a href="#sobre" class="navitem">Sobre Nós</a>
+        <a href="#avaliacao" class="navitem">Avalições</a>
+        <a href="#contato" class="navitem">Contato</a>
     </nav>
 
     <button id="menu" class="menu-toggle" aria-label="Abrir menu">
@@ -46,12 +47,12 @@
     <nav class="nav-side">
         <button id="fecharMenu" aria-label="Fechar menu">✕</button>
 
-        <a href="#inicio" class="nav-item">HOME</a>
-        <a href="#banho" class="nav-item">BANHO E TOSA</a>
-        <a href="#produtos" class="nav-item">PRODUTOS</a>
-        <a href="#sobre" class="nav-item">SOBRE NÓS</a>
-        <a href="#avaliacao" class="nav-item">AVALIAÇÕES</a>
-        <a href="#contato" class="nav-item">CONTATO</a>
+        <a href="#inicio" class="nav-item">Home</a>
+        <a href="#banho" class="nav-item">Banho e tosa</a>
+        <a href="#espaço" class="nav-item">Nosso Espaço</a>
+        <a href="#sobre" class="nav-item">Sobre Nós</a>
+        <a href="#avaliacao" class="nav-item">Avaliação</a>
+        <a href="#contato" class="nav-item">Contato</a>
     </nav>
 
 </header>
@@ -85,7 +86,7 @@
              
                 <div class="carrossel-item">
                     <span class="pet-service-badge">Banho Relaxante</span>
-                    <img src="imagens/banhorelaxante.jfif" alt="Pet no Studio Pet" loading="lazy">
+                    <img src="imagens/banho.png" alt="Pet no Studio Pet" loading="lazy">
                 </div>
 
               
@@ -105,9 +106,14 @@
                     <span class="pet-service-badge">Fotos Temáticas</span>
                     <img src="imagens/hallowen.png" alt="Pet no Studio Pet" loading="lazy">
                 </div>
+
+                <div class="carrossel-item">
+                    <span class="pet-service-badge">Coloração</span>
+                    <img src="imagens/coloracao.png" alt="Pet no Studio Pet" loading="lazy">
+                </div>
              
-                <div class="carrossel-item"><span class="pet-service-badge">Banho em Gatos</span><img src="imagens/gatofoto.png" loading="lazy"></div>
-                <div class="carrossel-item"><span class="pet-service-badge">Banho Relaxante</span><img src="imagens/banhorelaxante.jfif" loading="lazy"></div>
+                <div class="carrossel-item"><span class="pet-service-badge">Banho em Gatos</span><img src="imagens/gato2.png" loading="lazy"></div>
+                <div class="carrossel-item"><span class="pet-service-badge">Banho Relaxante</span><img src="imagens/banho.png" loading="lazy"></div>
                 <div class="carrossel-item"><span class="pet-service-badge">Hidratação</span><img src="imagens/hidratacao.webp" loading="lazy"></div>
                 <div class="carrossel-item"><span class="pet-service-badge">Tosa</span><img src="imagens/tosa.png" loading="lazy"></div>
                 <div class="carrossel-item"><span class="pet-service-badge">Banho em Gato</span><img src="imagens/gatofoto.png" loading="lazy"></div>
@@ -118,41 +124,71 @@
         <div class="carrossel-botao">
         <a href="html/agendamento.html">Agendar</a>
         </div>
+
+    <section >
+        <section class="espaço" id="espaco">
+        <h2 class="titulo2" style="color: #b17680; margin-bottom: 35px; text-align: center;">Nosso espaço</h2>
+
+        <!-- Container da galeria -->
+            <div class="fotos">
+            <!-- Botões de navegação com novos IDs -->
+                <button id="botaoVoltar" type="button" aria-label="Imagem anterior">&lt;</button>
+                <button id="botaoAvancar" type="button" aria-label="Próxima imagem">&gt;</button>
+
+            <!-- Container da imagem + legenda com novas classes/IDs -->
+            <div class="container-midia">
+                <img id="exibicaoMidia" class="aline" src="imagens/panoramica.png" alt="Nosso Espaço - Foto 1">
+                <div id="textoLegenda" class="legenda-foto">Vista Panorâmica do Nosso Espaço</div>
+                </div>
+            </div>
+        </section>
+    </section>
+
         <!-- Seção PRODUTOS -->
-         <section class="container" id="produtos">
-         <h2 class="titulo2" style="color: #b17680; margin-bottom: 85px;">Nossos Produtos</h2>
+         <!-- <section class="container" id="produtos">
+         <h2 class="titulo2" style="color: #b17680; margin-bottom: 85px;">Produtos</h2>
         
         <main class="catalogo">
-                <div class="cards"> <img src="imagens/icons8-dog-48.png" alt="Cachorro" class="icone">
+                <div class="cards">
+                    <div class="circulo-icone"> <img src="imagens/icons8-dog-48.png" alt="Cachorro" class="icone"></div>
+                     <p class="nome-icone">Cachorro</p>
                     <div class="janelinha-hover canto2">
                         <img src="imagens/dog-produtos.jpg" alt="Ampliada">
                     </div>
                 </div>
-            <div class="cards"> <img src="imagens/icons8-gato-48.png" alt="Gato" class="icone">
+            <div class="cards"> 
+                <div class="circulo-icone"><img src="imagens/icons8-gato-48.png" alt="Gato" class="icone"></div>
+                 <p class="nome-icone">Gato</p>
                 <div class="janelinha-hover">
                     <img src="imagens/gato.jpg" alt="Ampliada">
                     </div>
                 </div>
 
-            <div class="cards"> <img src="imagens/icons8-bird-48.png" alt="Pássarinho" class="icone">
+            <div class="cards"> 
+                <div class="circulo-icone"><img src="imagens/icons8-bird-48.png" alt="Pássarinho" class="icone"></div>
+                 <p class="nome-icone">Aves</p>
                 <div class="janelinha-hover canto">
                     <img src="imagens/passarinho.jpg" alt="Ampliada">
                 </div>
             </div>
 
-            <div class="cards"> <img src="imagens/icons8-clown-fish-48.png" alt="Aquário" class="icone">
+            <div class="cards"> 
+                <div class="circulo-icone"><img src="imagens/icons8-clown-fish-48.png" alt="Aquário" class="icone"></div>
+                 <p class="nome-icone">Peixe</p>
                 <div class="janelinha-hover">
                     <img src="imagens/aquario.jfif" alt="Ampliada">
                 </div>
             </div>
 
-            <div class="cards"> <img src="imagens/icons8-bay-leaf-48.png" alt="Jardim" class="icone">
+            <div class="cards"> 
+                <div class="circulo-icone"><img src="imagens/icons8-bay-leaf-48.png" alt="Jardim" class="icone"></div>
+                 <p class="nome-icone">Planta</p>
                 <div class="janelinha-hover">
                     <img src="imagens/Jardim.jpg" alt="Ampliada">
                 </div>
             </div>
         </main>
-        </section>
+        </section> -->
         <!-- Seção SOBRE -->
         
 <section id="sobre" class="sobreFundo">  

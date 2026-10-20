@@ -1,0 +1,156 @@
+.fotos {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container do elemento de imagem + legenda */
+.container-midia {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+/* Legenda na parte inferior da imagem */
+.legenda-foto {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.65); /* Fundo escuro semitransparente */
+    color: #ffffff;
+    text-align: center;
+    padding: 12px 15px;
+    font-size: 15px;
+    font-weight: 500;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    z-index: 5;
+}
+
+button {
+    position: absolute;
+    z-index: 10; /* Garante que os botões fiquem acima da foto e da legenda */
+    top: 50%;
+    transform: translateY(-50%);
+    border-style: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgb(254, 246, 249);
+    color: rgba(59, 29, 42, 0.9);
+    transition: background-color 0.3s, fill 0.3s, color 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px 0px;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: #777676;
+    color: #ffffff;
+}
+
+/* Posiciona as setas visíveis nas bordas internas da imagem */
+#botaoVoltar {
+    left: 15px;
+}
+
+#botaoAvancar {
+    right: 15px;
+}
+
+/* ==========================================
+   BLOCO DE TEXTO
+   ========================================== */
+
+.texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 500px;
+}
+
+.texto h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+
+.texto .resumo {
+    font-size: 18px;
+    font-weight: normal;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.texto .resumo-chamada {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   RESPONSIVIDADE (DISPOSITIVOS MÓVEIS)
+   ========================================== */
+
+@media (max-width: 768px) {
+    .sobre {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .carrossel-tagline {
+        width: auto;
+        max-width: 280px;
+        padding: 15px 20px;
+    }
+
+    .aline {
+        width: 100%;
+        max-width: 320px;
+        height: 320px;
+    }
+
+    .container-midia {
+        max-width: 320px;
+    }
+
+    .texto {
+        margin-left: 0;
+        margin-top: -10px;
+        text-align: center;
+    }
+
+    .texto h1 {
+        font-size: 25px;
+        font-weight: bold;
+        color: #ffffff;
+        line-height: 1.3;
+        margin-bottom: 25px;
+    }
+
+    #botaoVoltar {
+        left: 10px;
+    }
+
+    #botaoAvancar {
+        right: 10px;
+    }
+}
