@@ -31,6 +31,16 @@
             </div>
 
             <div class="campo">
+                <label for="especie">Especie</label>
+                <div class="select-wrapper">
+                    <select id="especie" name="especie" required>
+                        <option value="cachorro">Cachorro</option>
+                        <option value="gato">Gato</option>
+                        <option value="roedor">Roedor</option>
+                    </select>
+                </div>
+            </div>
+            <div class="campo">
                 <label for="pet">Nome do Pet</label>
                 <input type="text" id="pet" name="pet" placeholder="Nome do pet" required>
             </div>
@@ -41,25 +51,37 @@
                     <select id="porte" name="porte" required>
                         <option value="" selected disabled>Selecione</option>
                         <option value="pequeno">Pequeno</option>
-                        <option value="medio">Médio</option>
+                        <option value="Gato">Médio</option>
                         <option value="grande">Grande</option>
                     </select>
                 </div>
             </div>
-
-            <div class="campo">
-                <label for="procedimento">Procedimento</label>
-                <p class="legenda" id="procedimento-legenda">Incluso corte de unhas</p>
-                <div class="select-wrapper">
-                    <select id="procedimento" name="procedimento" aria-describedby="procedimento-legenda" required>
-                        <option value="" selected disabled>Selecione</option>
-                        <option value="banho">Banho</option>
-                        <option value="banho-tosa-geral">Banho + Tosa Geral</option>
-                        <option value="banho-tosa-tesoura">Banho + Tosa na Tesoura</option>
-                        <option value="banho-subpelo">Banho + Remoção de Subpelo</option>
-                    </select>
-                </div>
-            </div>
+<div class="campo">
+  <label>Selecione os Serviços:</label>
+  <p>Incluso corte de unhas</p>
+  <div class="dropdown-multiplo">
+    <!-- O botão que abre/fecha o menu e mostra o resumo -->
+    <div class="dropdown-botao" onclick="alternarDropdownM()">
+      <span id="texto-resumo">Selecione uma ou mais opções.</span>
+    </div>
+    
+    <!-- A lista suspensa com os checkboxes -->
+    <div id="dropdown-lista" class="dropdown-lista">
+      <label class="opcao-checkbox">
+        <input type="checkbox" value="Banho" onchange="atualizarResumoM()"> Banho
+      </label>
+      <label class="opcao-checkbox">
+        <input type="checkbox" value="Tosa" onchange="atualizarResumoM()"> Tosa
+      </label>
+      <label class="opcao-checkbox">
+        <input type="checkbox" value="Hidratação" onchange="atualizarResumoM()"> Hidratação
+      </label>
+      <label class="opcao-checkbox">
+        <input type="checkbox" value="Corte de Unha" onchange="atualizarResumoM()"> Coloração
+      </label>
+    </div>
+  </div>
+</div>
 
             <div class="campo">
                 <label for="periodo">Período Desejado</label>
@@ -76,6 +98,23 @@
                 <label for="obs">Observações</label>
                 <textarea id="obs" name="obs" rows="4" placeholder="Informações adicionais"></textarea>
             </div>
+
+            <div class="campo">
+  <!-- Linha do Interruptor -->
+        <div class="toggle-row">
+            <label for="toggle-taxi-dog">Deseja contratar o Táxi Dog?</label>
+            <label class="switch">
+                <input type="checkbox" id="toggle-taxi-dog" onchange="alternarEndereco()">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+  <!-- Aba invisível que vai deslizar para baixo -->
+        <div id="aba-endereco" class="aba-endereco">
+        <label for="input-endereco" class="legenda" >Endereço completo: </label>
+            <input type="text" id="input-endereco" placeholder="Ex: Av. Nossa Sra. do Sabará, 3361 - Bloco 3" required>
+        </div>
+        </div>
 
             <p class="resumo" id="resumo" aria-live="polite"></p>
 
