@@ -26,6 +26,16 @@
     /* Removemos o tamanho fixo, fundo e border-radius daqui */
 }
 
+.sobre-produto{
+    display: flex;
+    font-size: 18px;
+    margin-top: -80px;
+    margin-bottom: 70px !important;
+    justify-content: center;
+    color: #333;
+    text-align: justify;
+}
+
 /* NOVA CLASSE: Esta será a bola rosa que envolve apenas o ícone */
 .circulo-icone {
     display: flex;

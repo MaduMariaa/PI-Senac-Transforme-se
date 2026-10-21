@@ -15,7 +15,11 @@ html{
 body{
     color: #000;
     background-color: #fff;
-    line-height: 1.5;
+    line-height: 1.5;  
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #inicio {
@@ -31,3 +35,9 @@ html, body {
 [id] {
     margin-top: 20px;
 }
+
+img {
+  -webkit-user-drag: none;
+  -webkit-user-drag: none;
+}
+ 

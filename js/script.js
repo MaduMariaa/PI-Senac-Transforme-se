@@ -88,83 +88,58 @@ navItem.forEach(function(item) {
     });
 });
 
+let indexAtual = 0;
 
+function atualizarCarrossel() {
+    const track = document.querySelector('.carrossel-track');
+    const itens = document.querySelectorAll('.carrossel-item');
+    const wrapper = document.querySelector('.carrossel-wrapper');
+    
+    if (!track || itens.length === 0) return;
 
-document.addEventListener("DOMContentLoaded", () => {
-    const wrapper = document.querySelector(".carrossel-wrapper");
-    const track = document.querySelector(".carrossel-track");
-
-    if (!wrapper || !track) return;
-
-    let isDragging = false;
-    let startX = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
-
-    // Função para obter a posição X exata (funciona para mouse e toque do celular)
-    function getPositionX(event) {
-        return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+    // Se for Desktop (tela maior que 768px), limpa as modificações do JS
+    if (window.innerWidth > 768) {
+        track.style.transform = '';
+        itens.forEach(item => item.classList.remove('active'));
+        return;
     }
 
-    // Inicia o arrasto (Mouse Click ou Toque na Tela)
-    function dragStart(event) {
-        isDragging = true;
-        startX = getPositionX(event);
-        wrapper.classList.add("arrastando");
-
-        // Captura a posição atual calculada pela animação CSS antes de pausá-la
-        const computedStyle = window.getComputedStyle(track);
-        const matrix = new WebKitCSSMatrix(computedStyle.transform);
-        prevTranslate = matrix.m41; // Obtém o valor atual de X no transform atual
-
-        // Para a animação automática CSS e fixa a posição atual do transform via JS
-        track.style.animation = "none";
-        track.style.transform = `translateX(${prevTranslate}px)`;
-    }
-
-    // Executa enquanto o usuário move o mouse/dedo
-    function dragAction(event) {
-        if (!isDragging) return;
-        
-        const currentX = getPositionX(event);
-        const dragDistance = currentX - startX;
-        
-        currentTranslate = prevTranslate + dragDistance;
-
-        // Limita o arrasto para o carrossel infinito não sumir da tela nas pontas
-        const trackWidth = track.scrollWidth;
-        if (currentTranslate > 0) {
-            currentTranslate = -trackWidth / 2; // Volta para a metade se for muito para a esquerda
-        } else if (currentTranslate < -trackWidth / 2) {
-            currentTranslate = 0; // Reseta se passar da metade mapeada
+    // Código executado apenas se for Mobile
+    itens.forEach((item, index) => {
+        if (index === indexAtual) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
         }
+    });
 
-        track.style.transform = `translateX(${currentTranslate}px)`;
+    const larguraItem = itens[indexAtual].offsetWidth;
+    const larguraWrapper = wrapper.offsetWidth;
+    const offsetItem = itens[indexAtual].offsetLeft; 
+    
+    // Alinhamento matemático centralizado perfeito na viewport móvel
+    const deslocamento = offsetItem - (larguraWrapper / 2) + (larguraItem / 2);
+    track.style.transform = `translateX(${-deslocamento}px)`;
+}
+
+function mudarFoto(direcao) {
+    // Executa a mudança de foto por cliques apenas se estiver no mobile
+    if (window.innerWidth > 768) return;
+
+    const itens = document.querySelectorAll('.carrossel-item');
+    indexAtual += direcao;
+
+    if (indexAtual < 0) {
+        indexAtual = itens.length - 1;
+    } else if (indexAtual >= itens.length) {
+        indexAtual = 0;
     }
 
-    // Finaliza o arrasto (Solta o clique ou tira o dedo)
-    function dragEnd() {
-        if (!isDragging) return;
-        isDragging = false;
-        wrapper.classList.remove("arrastando");
+    atualizarCarrossel();
+}
 
-        // Salva onde o usuário parou de arrastar
-        prevTranslate = currentTranslate;
-
-        // Opcional: Reativa a animação automática de onde parou.
-        // Se você preferir que o carrossel continue parado após arrastar, comente as duas linhas abaixo:
-        track.style.animation = "rodar 30s linear infinite";
-        track.style.transform = ""; // Limpa o transform inline para o CSS reassumir
-    }
-
-    // --- EVENTOS DO MOUSE (Computador) ---
-    wrapper.addEventListener("mousedown", dragStart);
-    window.addEventListener("mousemove", dragAction);
-    window.addEventListener("mouseup", dragEnd);
-
-    // --- EVENTOS DE TOQUE (Celular/Tablet) ---
-    wrapper.addEventListener("touchstart", dragStart, { passive: true });
-    window.addEventListener("touchmove", dragAction, { passive: true });
-    window.addEventListener("touchend", dragEnd);
+// Inicializa o estado correto baseado na largura atual do dispositivo
+window.addEventListener('load', () => {
+    setTimeout(atualizarCarrossel, 150);
 });
-
+window.addEventListener('resize', atualizarCarrossel);

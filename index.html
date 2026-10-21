@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio Pet</title>
-    <link rel="shortcut icon" href="imagens/Design_sem_nome__1_-removebg-preview.png" type="image/x-icon">
+    <link rel="shortcut icon" href="imagens/iconem.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/banner.css">
@@ -74,18 +74,21 @@
                 <span class="titulo2"> Banho & Tosa</span>
             </div>
             <div class="carrossel-wrapper">
+
+                <button class="seta-carrossel seta-esq" onclick="mudarFoto(-1)">&#10094;</button>
+                <button class="seta-carrossel seta-dir" onclick="mudarFoto(1)">&#10095;</button>
+
+
                 <div class="carrossel-track">
                 
+                <div class="carrossel-item">
+                    <span class="pet-service-badge">Banho Relaxante</span>
+                    <img src="imagens/banho.png" alt="Pet no Studio Pet" loading="lazy">
+                </div>
                
                 <div class="carrossel-item">
                     <span class="pet-service-badge">Banho em Gatos</span>
                     <img src="imagens/gatofoto.png" alt="Pet no Studio Pet" loading="lazy">
-                </div>
-
-             
-                <div class="carrossel-item">
-                    <span class="pet-service-badge">Banho Relaxante</span>
-                    <img src="imagens/banho.png" alt="Pet no Studio Pet" loading="lazy">
                 </div>
 
               
@@ -115,7 +118,6 @@
                 <div class="carrossel-item"><span class="pet-service-badge">Banho Relaxante</span><img src="imagens/banho.png" loading="lazy"></div>
                 <div class="carrossel-item"><span class="pet-service-badge">Hidratação</span><img src="imagens/hidratacao.webp" loading="lazy"></div>
                 <div class="carrossel-item"><span class="pet-service-badge">Tosa</span><img src="imagens/tosa.png" loading="lazy"></div>
-                <div class="carrossel-item"><span class="pet-service-badge">Banho em Gato</span><img src="imagens/gatofoto.png" loading="lazy"></div>
 
                 
             </div>
@@ -127,6 +129,7 @@
         <!-- Seção PRODUTOS -->
          <section class="container" id="produtos">
          <h2 class="titulo2" style="color: #b17680; margin-bottom: 85px;">Produtos</h2>
+         <p class="sobre-produto">Produtos de diversos setores e utensilios, unindo qualidade e praticidade em um só lugar.</p>
         
         <main class="catalogo">
                 <div class="cards">
@@ -201,7 +204,7 @@
     <div class="elfsight-app-5a32acca-5026-4e89-91ac-7afdd9c2f8d5"></div>
 
     <div class="fotogrande">
-        <img src="imagens/fotobanheira.png">
+        <img src="imagens/dogsbanheira.png">
     </div>
 
             <!-- Seção CONTATO -->
