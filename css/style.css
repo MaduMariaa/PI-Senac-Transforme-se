@@ -32,10 +32,6 @@ html, body {
     overflow-x: hidden;
 }
 
-[id] {
-    margin-top: 20px;
-}
-
 img {
   -webkit-user-drag: none;
   -webkit-user-drag: none;

@@ -2,7 +2,7 @@
 .banner-principal{
     position: relative;
     width: 100%;
-    height: 96vh;/*o tanto que o banner ocupa na tela*/
+    height: 100vh;/*o tanto que o banner ocupa na tela*/
 
 /*Img de fundo*/
     background-image: url('../imagens/banhoetosa.jpg');
@@ -22,7 +22,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Preto com 50% de opacidade */
+    background-color: rgba(0, 0, 0, 0.6); /* Preto com 50% de opacidade */
     z-index: 1; /* Fica acima da foto de fundo */
 }
 
@@ -87,7 +87,27 @@
 
 @media (max-width: 768px) {
     .banner-principal {
-        /* Carrega uma imagem vertical*/
-        background-image: url('../imagens/banhoetosa.jpg'); 
+        background-image: url('../imagens/fotoBanner.png'); 
+    }
+    .banner-titulo{
+        transform: translateY(-200px); 
+        white-space: nowrap !important;
+        font-size: 70px;
+    }
+
+    .banner-botao {
+        margin-bottom: 8px;
+        transform: translateY(210px); 
+    }
+
+    .banner-overlay{
+    background-color: rgba(0, 0, 0, 0.4); /* Preto com 50% de opacidade */
+
+    }
+
+    .banner-subtitulo, .banner-texto{
+        opacity: 0 !important;          /* Torna o texto 100% transparente */
+        visibility: hidden !important; 
+        margin: 0 0 100px 0;
     }
 }

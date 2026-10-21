@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
 
-#banho{
-    margin-top: 30px !important;
+#banho {
+    margin-top: 0 !important;      /* Remove a margem que cria a linha */
+    padding-top: 30px !important;   /* Cria o mesmo espaço de 30px, mas sem quebrar o encaixe */
 }
 
 .carrossel {
@@ -80,7 +81,6 @@
     margin-top: 0px; 
 }
 
-/* Modificamos a margem da imagem para refletir no container pai */
 .carrossel-track img {
     margin: 0 10px;
     display: block; /* Remove o espaçamento inferior fantasma do HTML */
@@ -170,8 +170,6 @@
     }
 }
 
-/* --- ADICIONE ISSO AO FINAL DO SEU ARQUIVO CSS --- */
-
 @media (max-width: 768px) {
     /* Desativa a animação automática apenas no celular */
     .carrossel-track {
@@ -217,6 +215,10 @@
 
     .seta-esq { left: 10px; }
     .seta-dir { right: 10px; }
+
+        .carrossel-wrapper::before, .carrossel-wrapper::after {
+        display: none;
+    }
 }
 
 /* Esconde as setas por padrão em telas grandes (Desktop) */

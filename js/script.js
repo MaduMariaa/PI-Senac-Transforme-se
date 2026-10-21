@@ -138,8 +138,35 @@ function mudarFoto(direcao) {
     atualizarCarrossel();
 }
 
-// Inicializa o estado correto baseado na largura atual do dispositivo
-window.addEventListener('load', () => {
-    setTimeout(atualizarCarrossel, 150);
-});
-window.addEventListener('resize', atualizarCarrossel);
+// VARIÁVEL DO ELEMENTO: Ajustada para o carrossel do banho
+const QuadroimagemBanho = document.querySelector('.carrossel-track');
+
+// Variáveis de coordenadas exclusivas para o toque do banho
+let touchStartBanhoX = 0;
+let touchEndBanhoX = 0;
+
+// Registra o ponto onde o usuário tocou na tela
+QuadroimagemBanho.addEventListener('touchstart', function(event) {
+    touchStartBanhoX = event.changedTouches[0].screenX;
+}, { passive: true });
+
+// Registra o ponto onde o usuário soltou a tela e verifica a direção
+QuadroimagemBanho.addEventListener('touchend', function(event) {
+    touchEndBanhoX = event.changedTouches[0].screenX;
+    lidarComArrastoBanho();
+}, { passive: true });
+
+// Função que calcula a direção do arrasto e chama a SUA função mudarFoto()
+function lidarComArrastoBanho() {
+    const limiteArrasto = 50; 
+
+    // Se a posição inicial for maior que a final -> Arrastou para a ESQUERDA (Avança)
+    if (touchStartBanhoX - touchEndBanhoX > limiteArrasto) {
+        mudarFoto(1); // Chama a sua função passando 1 para ir para a próxima foto
+    }
+    // Se a posição final for maior que a inicial -> Arrastou para a DIREITA (Volta)
+    else if (touchEndBanhoX - touchStartBanhoX > limiteArrasto) {
+        mudarFoto(-1); // Chama a sua função passando -1 para voltar uma foto
+    }
+}
+atualizarCarrossel();
