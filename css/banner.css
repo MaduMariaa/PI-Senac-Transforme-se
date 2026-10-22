@@ -5,7 +5,7 @@
     height: 100vh;/*o tanto que o banner ocupa na tela*/
 
 /*Img de fundo*/
-    background-image: url('../imagens/banhoetosa.jpg');
+    background-image: url('../imagens/banhoetosa.webp');
     background-size: cover; /*cobre todo o espaço para o banner*/
     background-position: center;
     background-repeat: no-repeat;
@@ -87,27 +87,48 @@
 
 @media (max-width: 768px) {
     .banner-principal {
-        background-image: url('../imagens/fotoBanner.png'); 
+        position: relative;
+        height: 100svh;               /* ocupa a tela inteira do celular */
+        min-height: 560px;
+        background-image: url('../imagens/fotoBanner.webp');
+        background-size: cover;       /* preenche sem distorcer */
+        background-position: center;  /* centraliza a fachada */
+        background-repeat: no-repeat;
     }
-    .banner-titulo{
-        transform: translateY(-200px); 
-        white-space: nowrap !important;
-        font-size: 70px;
+
+    .banner-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .banner-conteudo {
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* título em cima, botão embaixo */
+        align-items: center;
+        padding: 90px 20px 40px;        /* 90px de cima = espaço da navbar */
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .banner-titulo {
+        transform: none;
+        white-space: nowrap;
+        font-size: clamp(36px, 12vw, 70px); /* encolhe sozinho em telas pequenas */
+        margin: 0;
     }
 
     .banner-botao {
-        margin-bottom: 8px;
-        transform: translateY(210px); 
+        transform: none;
+        margin: 0;
     }
 
-    .banner-overlay{
-    background-color: rgba(0, 0, 0, 0.4); /* Preto com 50% de opacidade */
-
-    }
-
-    .banner-subtitulo, .banner-texto{
-        opacity: 0 !important;          /* Torna o texto 100% transparente */
-        visibility: hidden !important; 
-        margin: 0 0 100px 0;
+    .banner-subtitulo,
+    .banner-texto {
+        display: none !important;
     }
 }

@@ -5,24 +5,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio Pet</title>
     <link rel="shortcut icon" href="imagens/iconem.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/banner.css">
-    <link rel="stylesheet" href="css/carrossel.css">
-    <link rel="stylesheet" href="css/catalogo.css">
-    <link rel="stylesheet" href="css/sobre.css">
-    <link rel="stylesheet" href="css/avaliacao.css">
-    <link rel="stylesheet" href="css/footer.css">
- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
 
+        <!-- 1. LOADER: sempre primeiro -->
+    <script>document.documentElement.classList.add('is-loading');</script>
+    <style>
+      :root { --loader-bg:#ffffff; --paw-color:#3a2e2a; --paw-empty:#e6e0dc; }
+      @media (prefers-color-scheme: dark) {
+        :root { --loader-bg:#141212; --paw-color:#f2ece8; --paw-empty:#3a3532; }
+      }
+      html.is-loading, html.is-loading body { overflow:hidden; background:var(--loader-bg); }
+      html.is-loading body > *:not(#page-loader) { opacity:0; }
+      body > *:not(#page-loader) { transition:opacity .4s ease; }
+
+      #page-loader {
+        position:fixed !important; inset:0; z-index:2147483647;
+        display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2.5rem;
+        background:var(--loader-bg);
+        transition:opacity .5s ease, visibility .5s ease;
+      }
+      #page-loader.is-done { opacity:0; visibility:hidden; }
+      #page-loader .loader-logo { width:min(180px,45vw); height:auto; animation:logo-breathe 2s ease-in-out infinite; }
+      @keyframes logo-breathe { 0%,100%{transform:scale(1)} 50%{transform:scale(1.04)} }
+
+      .paw-track { display:flex; gap:clamp(.4rem,2vw,.9rem); padding:0 1rem; }
+      .paw { width:clamp(20px,5vw,30px); height:auto; fill:var(--paw-empty); transition:fill .3s ease; }
+      .paw:nth-child(odd)  { transform:translateY(-6px) rotate(80deg); }
+      .paw:nth-child(even) { transform:translateY(6px) rotate(100deg); }
+      .paw.is-on { fill:var(--paw-color); animation:paw-step .35s ease-out; }
+      @keyframes paw-step { 0%{opacity:0;scale:.4} 70%{scale:1.15} 100%{opacity:1;scale:1} }
+      .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+      @media (prefers-reduced-motion: reduce) { #page-loader .loader-logo, .paw.is-on { animation:none; } }
+    </style>
+    <!-- 2. CSS DO SITE: carrega sem travar a tela -->
+    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/navbar.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/banner.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/carrossel.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/catalogo.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/sobre.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/avaliacao.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/footer.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- 3. FONTES (uma linha só para as duas) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Fredoka:wght@300..700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+
+    <noscript>
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/navbar.css">
+      <link rel="stylesheet" href="css/banner.css">
+      <link rel="stylesheet" href="css/carrossel.css">
+      <link rel="stylesheet" href="css/catalogo.css">
+      <link rel="stylesheet" href="css/sobre.css">
+      <link rel="stylesheet" href="css/avaliacao.css">
+      <link rel="stylesheet" href="css/footer.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Fredoka:wght@300..700&display=swap">
+    </noscript>
+
+    <!-- 4. SEU JS: defer = não trava a página -->
+    <script src="js/script.js" defer></script>
+
 </head>
     <body id="inicio">
-  
+
+        <div id="page-loader" role="status" aria-live="polite">
+            <img class="loader-logo" src="imagens/iconem.webp" width="180" height="180" fetchpriority="high">
+            <div class="paw-track" aria-hidden="true"></div>
+            <span class="sr-only">Carregando página…</span>
+        </div>
+<script>
+        (function () {
+  var TOTAL_PAWS = 8, MIN_TIME = 800, MAX_TIME = 60000;
+  var loader = document.getElementById('page-loader');
+  var track = loader.querySelector('.paw-track');
+  var start = Date.now();
+
+  var paw = '<svg class="paw" viewBox="0 0 64 64"><ellipse cx="32" cy="42" rx="14" ry="12"/>' +
+    '<ellipse cx="14" cy="26" rx="6" ry="8"/><ellipse cx="26" cy="16" rx="6" ry="8"/>' +
+    '<ellipse cx="38" cy="16" rx="6" ry="8"/><ellipse cx="50" cy="26" rx="6" ry="8"/></svg>';
+  track.innerHTML = new Array(TOTAL_PAWS + 1).join(paw);
+  var paws = track.querySelectorAll('.paw');
+  var real = 0, shown = 0, finished = false;
+
+  function render() {
+    var lit = Math.round(shown * TOTAL_PAWS);
+    for (var i = 0; i < paws.length; i++) paws[i].classList.toggle('is-on', i < lit);
+  }
+
+  // Avança devagar sozinho até 30%; o resto só com carregamento real
+  var trickle = setInterval(function () {
+    if (finished) return clearInterval(trickle);
+    shown = Math.max(shown, real, Math.min(shown + 0.01, 0.3));
+    render();
+  }, 300);
+
+  function finish() {
+    if (finished) return;
+    finished = true;
+    shown = 1; render();
+    var wait = Math.max(0, MIN_TIME - (Date.now() - start));
+    setTimeout(function () {
+      document.documentElement.classList.remove('is-loading');
+      loader.classList.add('is-done');
+      setTimeout(function () { loader.remove(); }, 600);
+    }, wait + 350);
+  }
+
+  function waitLink(link) {
+    if (link.rel === 'stylesheet' || link.sheet) return Promise.resolve();
+    return new Promise(function (res) {
+      link.addEventListener('load', res, { once: true });
+      link.addEventListener('error', res, { once: true });
+    });
+  }
+
+  function loadUrl(url) {
+    return new Promise(function (res) {
+      var i = new Image();
+      i.onload = i.onerror = res;
+      i.src = url;
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var links = [].slice.call(document.querySelectorAll('link[as="style"]'));
+
+    Promise.all(links.map(waitLink)).then(function () {
+      var urls = {};
+
+      // 1. TODAS as <img> da página (desliga o lazy enquanto o loader está na tela)
+      [].slice.call(document.querySelectorAll('img')).forEach(function (img) {
+        if (loader.contains(img)) return;
+        img.loading = 'eager';
+        var src = img.currentSrc || img.src;
+        if (src) urls[src] = true;
+      });
+
+      // 2. Imagens de FUNDO definidas no CSS (banner, seções etc.)
+      [].slice.call(document.querySelectorAll('body *')).forEach(function (el) {
+        var bg = getComputedStyle(el).backgroundImage;
+        if (!bg || bg === 'none') return;
+        var m, re = /url\(["']?(.*?)["']?\)/g;
+        while ((m = re.exec(bg))) urls[m[1]] = true;
+      });
+
+      var list = Object.keys(urls);
+      var tasks = list.map(loadUrl);
+      tasks.push(document.fonts ? document.fonts.ready : Promise.resolve());
+
+      var done = 0;
+      tasks.forEach(function (t) {
+        t.then(function () {
+          done++;
+          real = 0.3 + 0.65 * (done / tasks.length); // 30% → 95%
+        });
+      });
+
+      return Promise.all(tasks);
+    }).then(finish);
+  });
+
+  setTimeout(finish, MAX_TIME);
+})();
+</script>
+
+
     <header class="navbar">            
         <a href="#inicio">
             <img class="logo" src="imagens/logo.png" alt="Logo da Empresa">
@@ -214,7 +362,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div>
-                <a href="#inicio" href="javascript:location.reload();">
+                <a href="#inicio">
                     <img class="logo2" src="imagens/logo.png" alt="Logo da Empresa">
                 </a>
             </div>
@@ -247,17 +395,19 @@
             <p class="by">Desenvolvido por <a href="https://brukarua.github.io/lume/"> &copy; Lume. </a> <br> Todos os direitos reservados</p>
         </div>              
     </footer>
-    </div>
     <div vw class="enabled">
     <div vw-access-button class="active"></div>
     <div vw-plugin-wrapper>
       <div class="vw-plugin-top-wrapper"></div>
     </div>
   </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-    new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
-    <script src="js/script.js"></script>
+<script>
+window.addEventListener('load', function () {
+  var s = document.createElement('script');
+  s.src = 'https://vlibras.gov.br/app/vlibras-plugin.js';
+  s.onload = function () { new window.VLibras.Widget('https://vlibras.gov.br/app'); };
+  document.body.appendChild(s);
+});
+</script>
 </body>
 </html>
